@@ -920,7 +920,7 @@
     <div class="modal" id="reviewModal">
         <div class="modal-content">
             <div class="modal-title">Select Questions to Review</div>
-            <p>Check the questions you want to review now (oldest questions appear first):</p>
+            <p>Check the questions you want to review now</p>
 
             <div id="reviewQuestionsList">
                 <!-- Review questions will be inserted here -->
@@ -5195,6 +5195,8 @@
             // Update progress bars
             updateProgressBars();
             // Update streak info
+            // Check if it's a new day before updating streak
+            checkNewDay();
             updateStreakInfo();
 
             // Show results screen
