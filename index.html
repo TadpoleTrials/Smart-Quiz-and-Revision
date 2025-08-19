@@ -856,7 +856,7 @@
     <div class="sidebar">
         <div class="section-title">
             <i class="fas fa-fire"></i>
-            <h2>Streak Tracking</h2>
+            <h2>Streak</h2>
         </div>
 
         <div class="streak-display">
@@ -947,914 +947,776 @@
         const questionData = {
             "u3aos1": [
                 {
-                    id: "u3aos1-q1",
-                    question: "Which molecule carries the genetic instructions used in the growth, development, functioning, and reproduction of all known living organisms?",
-                    options: ["mRNA", "DNA", "tRNA", "rRNA"],
-                    answer: 1,
-                    explanation: "DNA stores genetic information used in the synthesis of proteins and governs cell activities."
-                },
-                {
-                    id: "u3aos1-q2",
-                    question: "What type of bond joins nucleotides together in a single strand of DNA?",
-                    options: ["Hydrogen bond", "Ionic bond", "Peptide bond", "Phosphodiester bond"],
-                    answer: 3,
-                    explanation: "Phosphodiester bonds link the sugar of one nucleotide to the phosphate of the next in the DNA backbone."
-                },
-                {
-                    id: "u3aos1-q3",
-                    question: "Which process converts the genetic code carried by mRNA into a polypeptide chain?",
-                    options: ["Transcription", "Translation", "Replication", "Splicing"],
-                    answer: 1,
-                    explanation: "Translation occurs at the ribosome where mRNA is decoded to produce a specific polypeptide."
-                },
-                {
-                    id: "u3aos1-q4",
-                    question: "What is the function of a repressor protein in the trp operon?",
-                    options: [
-                        "To prevent transcription when tryptophan is high",   // moved correct to A
-                        "To catalyse amino acid synthesis",
-                        "To enhance transcription",
-                        "To initiate translation"
-                    ],
-                    answer: 0, // now A
-                    explanation: "When tryptophan levels are high, the repressor protein binds to the operator, blocking RNA polymerase."
-                },
-                {
-                    id: "u3aos1-q5",
-                    question: "Which structure packages and modifies proteins before they are secreted from the cell?",
-                    options: [
-                        "Nucleus",
-                        "Rough ER",
-                        "Lysosome",
-                        "Golgi apparatus"  // moved correct to D
-                    ],
-                    answer: 3, // now D
-                    explanation: "The Golgi apparatus modifies, sorts, and packages proteins for secretion or delivery to other organelles."
-                },
-                {
-                    id: "u3aos1-q6",
-                    question: "Which of the following RNA types is responsible for bringing amino acids to the ribosome?",
-                    options: [
-                        "tRNA",    // moved correct to A
-                        "mRNA",
-                        "rRNA",
-                        "snRNA"
-                    ],
-                    answer: 0, // now A
-                    explanation: "tRNA carries specific amino acids to the ribosome based on the codon-anticodon pairing during translation."
-                },
-                {
-                    id: "u3aos1-q7",
-                    question: "Which nucleotide is found in RNA but not in DNA?",
-                    options: ["Adenine", "Guanine", "Thymine", "Uracil"],
-                    answer: 3,
-                    explanation: "Uracil is present in RNA instead of thymine, which is found in DNA."
-                },
-                {
-                    id: "u3aos1-q8",
-                    question: "What is the first step of gene expression?",
-                    options: ["Translation", "RNA processing", "Transcription", "DNA replication"],
-                    answer: 2,
-                    explanation: "Transcription is the process where a gene's DNA sequence is copied into RNA."
-                },
-                {
-                    id: "u3aos1-q9",
-                    question: "What process removes introns and joins exons in pre-mRNA?",
-                    options: ["Replication", "Capping", "Translation", "RNA splicing"],
-                    answer: 3,
-                    explanation: "RNA splicing removes introns and joins exons to produce mature mRNA."
-                },
-                {
-                    id: "u3aos1-q10",
-                    question: "Which region of a gene acts as a binding site for RNA polymerase?",
-                    options: ["Exon", "Operator", "Promoter", "Intron"],
-                    answer: 2,
-                    explanation: "The promoter region is where RNA polymerase binds to initiate transcription."
-                },
-                {
-                    id: "u3aos1-q11",
-                    question: "In eukaryotic cells, where does transcription take place?",
-                    options: ["Ribosome", "Cytoplasm", "Golgi apparatus", "Nucleus"],
-                    answer: 3,
-                    explanation: "Transcription occurs inside the nucleus of eukaryotic cells."
-                },
-                {
-                    id: "u3aos1-q12",
-                    question: "What is the correct order of events in gene expression?",
-                    options: ["Translation → RNA processing → Transcription", "Transcription → RNA processing → Translation", "RNA processing → Transcription → Translation", "Translation → Transcription → RNA processing"],
-                    answer: 1,
-                    explanation: "Gene expression follows this sequence: transcription, RNA processing, then translation."
-                },
-                {
-                    id: "u3aos1-q13",
-                    question: "Which bond forms between amino acids in a growing polypeptide chain?",
-                    options: ["Hydrogen bond", "Peptide bond", "Glycosidic bond", "Phosphodiester bond"],
-                    answer: 1,
-                    explanation: "A peptide bond links the carboxyl group of one amino acid to the amino group of another."
-                },
-                {
-                    id: "u3aos1-q14",
-                    question: "Which level of protein structure refers to the sequence of amino acids?",
-                    options: ["Primary", "Secondary", "Tertiary", "Quaternary"],
-                    answer: 0,
-                    explanation: "Primary structure is the linear sequence of amino acids in a polypeptide chain."
-                },
-                {
-                    id: "u3aos1-q15",
-                    question: "What is a proteome?",
-                    options: ["A type of genome", "The total RNA content", "All the proteins an organism can produce", "The group of enzymes used in transcription"],
-                    answer: 2,
-                    explanation: "The proteome is the complete set of proteins expressed by an organism."
-                },
-                {
-                    id: "u3aos1-q16",
-                    question: "What is the role of endonucleases in DNA manipulation?",
-                    options: ["To synthesise DNA strands", "To cut DNA at specific sequences", "To amplify DNA", "To join fragments of DNA"],
-                    answer: 1,
-                    explanation: "Endonucleases cut DNA at specific recognition sites, useful for gene editing and cloning."
-                },
-                {
-                    id: "u3aos1-q17",
-                    question: "What does PCR stand for?",
-                    options: ["Protein Chain Reaction", "Polymerase Chain Reaction", "Peptide Coding Reaction", "Protein Coding Replication"],
-                    answer: 1,
-                    explanation: "PCR stands for Polymerase Chain Reaction, a technique used to amplify DNA."
-                },
-                {
-                    id: "u3aos1-q18",
-                    question: "Which enzyme is used to join DNA fragments together?",
-                    options: ["Ligase", "Endonuclease", "Helicase", "RNA polymerase"],
-                    answer: 0,
-                    explanation: "Ligase joins DNA fragments by forming phosphodiester bonds."
-                },
-                {
-                    id: "u3aos1-q19",
-                    question: "What is the role of CRISPR-Cas9 in gene editing?",
-                    options: ["Amplifies genes", "Cuts DNA at specific sites", "Replicates DNA", "Processes RNA"],
-                    answer: 1,
-                    explanation: "CRISPR-Cas9 acts like molecular scissors to cut DNA at specific target sequences."
-                },
-                {
-                    id: "u3aos1-q20",
-                    question: "In DNA profiling, what is the purpose of gel electrophoresis?",
-                    options: ["To cut DNA", "To replicate DNA", "To separate DNA fragments by size", "To sequence DNA"],
-                    answer: 2,
-                    explanation: "Gel electrophoresis separates DNA fragments based on size, producing a banding pattern."
-                },
-                {
-                    "id": "u3aos1-q21",
-                    "question": "Which process is used to produce large quantities of a specific DNA segment in vitro?",
-                    "options": ["Gel electrophoresis", "Transformation", "PCR", "CRISPR"],
-                    "answer": 2,
-                    "explanation": "PCR (Polymerase Chain Reaction) is used to amplify specific DNA sequences."
-                },
-                {
-                    "id": "u3aos1-q22",
-                    "question": "Which organelle is directly involved in the synthesis of proteins for export?",
-                    "options": ["Smooth ER", "Rough ER", "Mitochondrion", "Nucleus"],
-                    "answer": 1,
-                    "explanation": "The rough endoplasmic reticulum synthesises proteins that are usually exported from the cell."
-                },
-                {
-                    "id": "u3aos1-q23",
-                    "question": "What type of RNA forms part of the structure of ribosomes?",
-                    "options": ["mRNA", "tRNA", "rRNA", "siRNA"],
-                    "answer": 2,
-                    "explanation": "rRNA (ribosomal RNA) combines with proteins to form ribosomes."
-                },
-                {
-                    "id": "u3aos1-q24",
-                    "question": "Which of the following best describes an exon?",
-                    "options": [
-                        "A coding segment retained in mature mRNA", // moved correct to A
-                        "A non-coding region removed during RNA processing",
-                        "A regulatory DNA region",
-                        "A promoter region"
-                    ],
-                    "answer": 0, // was 1, now A
-                    "explanation": "Exons are coding regions that remain in the mature mRNA after splicing."
-                },
-                {
-                    "id": "u3aos1-q25",
-                    "question": "Which of the following best defines a plasmid?",
-                    "options": [
-                        "A eukaryotic gene",
-                        "A viral genome",
-                        "An RNA virus",
-                        "A circular DNA molecule found in bacteria" // moved correct to D
-                    ],
-                    "answer": 3, // was 1, now D
-                    "explanation": "Plasmids are small circular DNA molecules used in genetic engineering to carry foreign genes."
-                },
-                {
-                    "id": "u3aos1-q26",
-                    "question": "What is the main function of DNA ligase in genetic engineering?",
-                    "options": [
-                        "To bind DNA fragments together", // moved correct to A
-                        "To cut DNA at specific sites",
-                        "To replicate DNA strands",
-                        "To synthesise proteins"
-                    ],
-                    "answer": 0, // was 2, now A
-                    "explanation": "DNA ligase joins DNA fragments by forming phosphodiester bonds between them."
-                },
-                {
-                    "id": "u3aos1-q27",
-                    "question": "Which structure contains the promoter region of a gene?",
-                    "options": ["Intron", "Exon", "Ribosome", "DNA upstream of the coding region"],
-                    "answer": 3,
-                    "explanation": "The promoter is located upstream of the gene's coding region and facilitates RNA polymerase binding."
-                },
-                {
-                    "id": "u3aos1-q28",
-                    "question": "What is a key feature of the genetic code?",
-                    "options": ["It is species-specific", "Each amino acid has only one codon", "It is degenerate", "It uses doublet codes"],
-                    "answer": 2,
-                    "explanation": "The genetic code is degenerate, meaning more than one codon can code for the same amino acid."
-                },
-                {
-                    "id": "u3aos1-q29",
-                    "question": "Which of the following enzymes is used during transcription?",
-                    "options": ["DNA polymerase", "RNA polymerase", "Ligase", "Helicase"],
-                    "answer": 1,
-                    "explanation": "RNA polymerase is responsible for synthesising RNA from a DNA template."
-                },
-                {
-                    "id": "u3aos1-q30",
-                    "question": "Which process involves the removal of introns from a newly synthesized RNA transcript?",
-                    "options": ["Replication", "Splicing", "Translation", "Translocation"],
-                    "answer": 1,
-                    "explanation": "Splicing removes non-coding introns and joins exons to form mature mRNA."
-                },
-                {
-                    "id": "u3aos1-q31",
-                    "question": "In recombinant DNA technology, what is the role of a bacterial plasmid?",
-                    "options": ["To splice mRNA", "To amplify DNA", "To act as a vector for gene transfer", "To cut DNA"],
-                    "answer": 2,
-                    "explanation": "A plasmid is used as a vector to carry foreign DNA into a host cell."
-                },
-                {
-                    "id": "u3aos1-q32",
-                    "question": "Which organelle is most closely associated with protein processing and export?",
-                    "options": ["Nucleus", "Ribosome", "Golgi apparatus", "Lysosome"],
-                    "answer": 2,
-                    "explanation": "The Golgi apparatus modifies and packages proteins for secretion or delivery to other organelles."
-                },
-                {
-                    "id": "u3aos1-q33",
-                    "question": "Which part of a gene is typically non-coding and located between coding sequences?",
-                    "options": ["Exon", "Operator", "Intron", "Promoter"],
-                    "answer": 2,
-                    "explanation": "Introns are non-coding sequences that are removed during RNA processing."
-                },
-                {
-                    "id": "u3aos1-q34",
-                    "question": "Which molecule serves as the template for RNA synthesis during transcription?",
-                    "options": [
-                        "DNA", // moved correct to A
-                        "tRNA",
-                        "mRNA",
-                        "rRNA"
-                    ],
-                    "answer": 0,
-                    "explanation": "DNA serves as the template strand for the synthesis of RNA during transcription."
-                },
-                {
-                    "id": "u3aos1-q35",
-                    "question": "What is the role of the operator region in the trp operon?",
-                    "options": [
-                        "Synthesises tryptophan",
-                        "Initiates transcription",
-                        "Codes for proteins",
-                        "Binds to repressors" // moved correct to D
-                    ],
-                    "answer": 3,
-                    "explanation": "The operator binds to a repressor protein to regulate gene transcription in operons."
-                },
-                {
-                    "id": "u3aos1-q36",
-                    "question": "Which process takes place at the ribosome?",
-                    "options": [
-                        "Translation", // moved correct to A
-                        "Transcription",
-                        "Replication",
-                        "Splicing"
-                    ],
-                    "answer": 0,
-                    "explanation": "Translation occurs at the ribosome, where the mRNA code is used to build a polypeptide."
-                },
-                {
-                    "id": "u3aos1-q37",
-                    "question": "What type of RNA carries the genetic code from DNA to the ribosome?",
-                    "options": [
-                        "rRNA",
-                        "tRNA",
-                        "siRNA",
-                        "mRNA" // moved correct to D
-                    ],
-                    "answer": 3,
-                    "explanation": "mRNA carries the genetic message transcribed from DNA to the ribosome."
-                },
-                {
-                    "id": "u3aos1-q38",
-                    "question": "What are the building blocks of proteins?",
-                    "options": [
-                        "Amino acids", // moved correct to A
-                        "Nucleotides",
-                        "Monosaccharides",
-                        "Fatty acids"
-                    ],
-                    "answer": 0,
-                    "explanation": "Proteins are made from amino acid monomers linked together by peptide bonds."
-                },
-                {
-                    "id": "u3aos1-q39",
-                    "question": "What is one application of recombinant plasmids in medicine?",
-                    "options": [
-                        "DNA fingerprinting",
-                        "CRISPR editing",
-                        "Protein folding analysis",
-                        "Insulin production" // moved correct to D
-                    ],
-                    "answer": 3,
-                    "explanation": "Recombinant plasmids are used in bacteria to produce human insulin for medical use."
-                },
-                {
-                    "id": "u3aos1-q40",
-                    "question": "Which technique separates DNA fragments based on size?",
-                    "options": [
-                        "CRISPR",
-                        "PCR",
-                        "Plasmid insertion",
-                        "Gel electrophoresis" // moved correct to D
-                    ],
-                    "answer": 3,
-                    "explanation": "Gel electrophoresis sorts DNA fragments by length as they move through a gel matrix."
-                },
-                {
-                    "id": "u3aos1-q41",
-                    "question": "Which molecule is produced during transcription?",
-                    "options": [
-                        "RNA", // moved correct to A
-                        "DNA",
-                        "Protein",
-                        "Lipids"
-                    ],
-                    "answer": 0,
-                    "explanation": "Transcription is the process of synthesising RNA from a DNA template."
-                },
-                {
-                    "id": "u3aos1-q42",
-                    "question": "Which enzyme is responsible for unzipping the DNA double helix during transcription?",
-                    "options": ["Helicase", "RNA polymerase", "DNA polymerase", "Ligase"],
-                    "answer": 1,
-                    "explanation": "RNA polymerase unwinds the DNA and builds the RNA strand during transcription."
-                },
-                {
-                    "id": "u3aos1-q43",
-                    "question": "What is the purpose of RNA processing in eukaryotic cells?",
-                    "options": ["To translate mRNA into protein", "To convert tRNA to rRNA", "To modify pre-mRNA into mature mRNA", "To produce introns"],
-                    "answer": 2,
-                    "explanation": "RNA processing removes introns and adds modifications to form mature mRNA."
-                },
-                {
-                    "id": "u3aos1-q44",
-                    "question": "Which RNA modification is added to the 5' end of eukaryotic pre-mRNA?",
-                    "options": ["Poly-A tail", "Spliceosome", "5' cap", "Exon"],
-                    "answer": 2,
-                    "explanation": "A 5' cap is added to protect the RNA and assist in ribosome binding during translation."
-                },
-                {
-                    "id": "u3aos1-q45",
-                    "question": "What is the role of a start codon in translation?",
-                    "options": ["Signals where transcription ends", "Marks the beginning of RNA splicing", "Initiates protein synthesis", "Activates DNA polymerase"],
-                    "answer": 2,
-                    "explanation": "The start codon (AUG) signals the beginning of translation and codes for methionine."
-                },
-                {
-                    "id": "u3aos1-q46",
-                    "question": "What happens to proteins after they are synthesised in the rough ER?",
-                    "options": ["They are degraded", "They are stored in the nucleus", "They are modified in the Golgi apparatus", "They are exported directly"],
-                    "answer": 2,
-                    "explanation": "Proteins are transported to the Golgi apparatus for further modification and sorting."
-                },
-                {
-                    "id": "u3aos1-q47",
-                    "question": "Which of the following best describes gene expression?",
-                    "options": [
-                        "Replication of DNA",
-                        "Protein folding",
-                        "Splicing of RNA",
-                        "Use of a gene to synthesise a functional product" // moved correct to D
-                    ],
-                    "answer": 3,
-                    "explanation": "Gene expression refers to the process where the information in a gene is used to produce a functional product, typically a protein."
-                },
-                {
-                    "id": "u3aos1-q48",
-                    "question": "What is a degenerate code in genetics?",
-                    "options": [
-                        "A code where multiple codons specify the same amino acid", // moved correct to A
-                        "A code that changes often",
-                        "A code that causes mutations",
-                        "A code that affects DNA replication"
-                    ],
-                    "answer": 0,
-                    "explanation": "The genetic code is degenerate because more than one codon can specify the same amino acid."
-                },
-                {
-                    "id": "u3aos1-q49",
-                    "question": "Which of the following is an ethical concern associated with gene editing in humans?",
-                    "options": [
-                        "Faster disease diagnosis",
-                        "Improved crop yields",
-                        "Higher insulin production",
-                        "Unintended effects on future generations" // moved correct to D
-                    ],
-                    "answer": 3,
-                    "explanation": "Editing the human genome may have long-term effects on future generations, raising ethical issues."
-                },
-                {
-                    "id": "u3aos1-q50",
-                    "question": "How are genetically modified organisms (GMOs) used in agriculture?",
-                    "options": [
-                        "To increase crop resistance and yield", // moved correct to A
-                        "To delay protein synthesis",
-                        "To reduce soil fertility",
-                        "To produce new human genes"
-                    ],
-                    "answer": 0,
-                    "explanation": "GMOs are engineered to be more productive and resistant to pests, diseases, or environmental conditions."
-                },
-                {
-                    "id": "u3aos1-q51",
-                    "question": "What type of bond stabilises the secondary structure of a protein?",
-                    "options": [
-                        "Peptide bonds",
-                        "Hydrogen bonds", // kept as B to maintain mix
-                        "Ionic bonds",
-                        "Disulfide bonds"
-                    ],
-                    "answer": 1,
-                    "explanation": "Hydrogen bonds form between backbone atoms and stabilise alpha-helices and beta-sheets in proteins."
-                },
-                {
-                    "id": "u3aos1-q52",
-                    "question": "Which structure in a prokaryotic operon controls access of RNA polymerase to the genes?",
-                    "options": [
-                        "Start codon",
-                        "Repressor gene",
-                        "Exon",
-                        "Operator region" // moved correct to D
-                    ],
-                    "answer": 3,
-                    "explanation": "The operator region can bind a repressor to block RNA polymerase from transcribing the genes."
-                },
-                {
-                    "id": "u3aos1-q53",
-                    "question": "Which of the following enzymes is used to make complementary DNA (cDNA) from mRNA?",
-                    "options": [
-                        "RNA polymerase",
-                        "Ligase",
-                        "DNA polymerase",
-                        "Reverse transcriptase" // moved correct to D
-                    ],
-                    "answer": 3,
-                    "explanation": "Reverse transcriptase synthesises complementary DNA (cDNA) using mRNA as a template."
-                },
-                {
-                    "id": "u3aos1-q54",
-                    "question": "What is one feature that makes CRISPR-Cas9 revolutionary in genetic engineering?",
-                    "options": [
-                        "It is highly specific and programmable", // moved correct to A
-                        "It cannot cut DNA",
-                        "It only works in plants",
-                        "It increases mutation rates randomly"
-                    ],
-                    "answer": 0,
-                    "explanation": "CRISPR-Cas9 can target specific DNA sequences for cutting, enabling precise gene editing."
-                },
-                {
-                    "id": "u3aos1-q55",
-                    "question": "What is meant by the term 'universal genetic code'?",
-                    "options": [
-                        "All organisms use different codes",
-                        "Only humans share a common code",
-                        "Each species has a unique set of amino acids",
-                        "The same codons code for the same amino acids in almost all organisms" // moved correct to D
-                    ],
-                    "answer": 3,
-                    "explanation": "The genetic code is nearly universal across species, meaning codons have the same meaning in most organisms."
-                },
-                {
-                    "id": "u3aos1-q56",
-                    "question": "Which cellular process results in the production of a polypeptide chain?",
-                    "options": [
-                        "Replication",
-                        "Translation", // kept as B to maintain mix
-                        "Transcription",
-                        "Splicing"
-                    ],
-                    "answer": 1,
-                    "explanation": "Translation is the process of converting the mRNA sequence into a polypeptide chain."
-                },
-                {
-                    "id": "u3aos1-q57",
-                    "question": "In which cell compartment does RNA splicing occur?",
-                    "options": [
-                        "Cytoplasm",
-                        "Ribosome",
-                        "Golgi apparatus",
-                        "Nucleus" // moved correct to D
-                    ],
-                    "answer": 3,
-                    "explanation": "RNA splicing occurs in the nucleus before mRNA exits to the cytoplasm for translation."
-                },
-                {
-                    "id": "u3aos1-q58",
-                    "question": "Which part of the gene is transcribed but not translated?",
-                    "options": ["Promoter", "Intron", "Start codon", "Exon"],
-                    "answer": 1,
-                    "explanation": "Introns are transcribed into pre-mRNA but removed during RNA processing and not translated."
-                },
-                {
-                    "id": "u3aos1-q59",
-                    "question": "Which process increases the amount of DNA for analysis in forensic science?",
-                    "options": ["CRISPR", "Recombinant plasmids", "PCR", "Gel electrophoresis"],
-                    "answer": 2,
-                    "explanation": "PCR is used to amplify small DNA samples for analysis, such as in forensic cases."
-                },
-                {
-                    "id": "u3aos1-q60",
-                    "question": "What is the function of a poly-A tail in mRNA?",
-                    "options": ["Initiates translation", "Protects mRNA and aids export from the nucleus", "Starts transcription", "Synthesises proteins"],
-                    "answer": 1,
-                    "explanation": "The poly-A tail stabilises mRNA and helps with transport from the nucleus to the cytoplasm."
-                },
-                {
-                    "id": "u3aos1-q41",
-                    "question": "Which molecule is produced during transcription?",
-                    "options": ["DNA", "mRNA", "Protein", "tRNA"],
-                    "answer": 1,
-                    "explanation": "Transcription is the process of synthesising mRNA from a DNA template."
-                },
-                {
-                    "id": "u3aos1-q42",
-                    "question": "Which enzyme is responsible for unzipping the DNA double helix during transcription?",
-                    "options": [
-                        "Ligase",
-                        "RNA polymerase", // moved correct to B
-                        "DNA polymerase",
-                        "Helicase"
-                    ],
-                    "answer": 1,
-                    "explanation": "RNA polymerase unwinds the DNA and builds the RNA strand during transcription."
-                },
-                {
-                    "id": "u3aos1-q43",
-                    "question": "What is the purpose of RNA processing in eukaryotic cells?",
-                    "options": [
-                        "To modify pre-mRNA into mature mRNA", // moved correct to A
-                        "To translate mRNA into protein",
-                        "To convert tRNA to rRNA",
-                        "To produce introns"
-                    ],
-                    "answer": 0,
-                    "explanation": "RNA processing removes introns and adds modifications to form mature mRNA."
-                },
-                {
-                    "id": "u3aos1-q44",
-                    "question": "Which RNA modification is added to the 5' end of eukaryotic pre-mRNA?",
-                    "options": [
-                        "Poly-A tail",
-                        "Exon",
-                        "5' cap", // kept as C to preserve mix
-                        "Spliceosome"
-                    ],
-                    "answer": 2,
-                    "explanation": "A 5' cap is added to protect the RNA and assist in ribosome binding during translation."
-                },
-                {
-                    "id": "u3aos1-q45",
-                    "question": "What is the role of a start codon in translation?",
-                    "options": [
-                        "Activates DNA polymerase",
-                        "Marks the beginning of RNA splicing",
-                        "Signals where transcription ends",
-                        "Initiates protein synthesis" // moved correct to D
-                    ],
-                    "answer": 3,
-                    "explanation": "The start codon (AUG) signals the beginning of translation and codes for methionine."
-                },
-                {
-                    "id": "u3aos1-q46",
-                    "question": "What happens to proteins after they are synthesised in the rough ER?",
-                    "options": [
-                        "They are modified in the Golgi apparatus", // moved correct to A
-                        "They are degraded",
-                        "They are stored in the nucleus",
-                        "They are exported directly"
-                    ],
-                    "answer": 0,
-                    "explanation": "Proteins are transported to the Golgi apparatus for further modification and sorting."
-                },
-                {
-                    "id": "u3aos1-q47",
-                    "question": "Which of the following best describes gene expression?",
-                    "options": [
-                        "Protein folding",
-                        "Use of a gene to synthesise a functional product", // kept as B
-                        "Replication of DNA",
-                        "Splicing of RNA"
-                    ],
-                    "answer": 1,
-                    "explanation": "Gene expression refers to the process where the information in a gene is used to produce a functional product, typically a protein."
-                },
-                {
-                    "id": "u3aos1-q48",
-                    "question": "What is a degenerate code in genetics?",
-                    "options": [
-                        "A code where multiple codons specify the same amino acid", // moved correct to A
-                        "A code that changes often",
-                        "A code that causes mutations",
-                        "A code that affects DNA replication"
-                    ],
-                    "answer": 0,
-                    "explanation": "The genetic code is degenerate because more than one codon can specify the same amino acid."
-                },
-                {
-                    "id": "u3aos1-q49",
-                    "question": "Which of the following is an ethical concern associated with gene editing in humans?",
-                    "options": [
-                        "Higher insulin production",
-                        "Improved crop yields",
-                        "Faster disease diagnosis",
-                        "Unintended effects on future generations" // moved correct to D
-                    ],
-                    "answer": 3,
-                    "explanation": "Editing the human genome may have long-term effects on future generations, raising ethical issues."
-                },
-                {
-                    "id": "u3aos1-q50",
-                    "question": "How are genetically modified organisms (GMOs) used in agriculture?",
-                    "options": [
-                        "To delay protein synthesis",
-                        "To increase crop resistance and yield", // moved correct to B
-                        "To reduce soil fertility",
-                        "To produce new human genes"
-                    ],
-                    "answer": 1,
-                    "explanation": "GMOs are engineered to be more productive and resistant to pests, diseases, or environmental conditions."
-                },
-                {
-                    "id": "u3aos1-q51",
-                    "question": "What type of bond stabilises the secondary structure of a protein?",
-                    "options": [
-                        "Disulfide bonds",
-                        "Peptide bonds",
-                        "Hydrogen bonds", // moved correct to C
-                        "Ionic bonds"
-                    ],
-                    "answer": 2,
-                    "explanation": "Hydrogen bonds form between backbone atoms and stabilise alpha-helices and beta-sheets in proteins."
-                },
-                {
-                    "id": "u3aos1-q52",
-                    "question": "Which structure in a prokaryotic operon controls access of RNA polymerase to the genes?",
-                    "options": [
-                        "Operator region", // moved correct to A
-                        "Repressor gene",
-                        "Start codon",
-                        "Exon"
-                    ],
-                    "answer": 0,
-                    "explanation": "The operator region can bind a repressor to block RNA polymerase from transcribing the genes."
-                },
-                {
-                    "id": "u3aos1-q53",
-                    "question": "Which of the following enzymes is used to make complementary DNA (cDNA) from mRNA?",
-                    "options": [
-                        "Ligase",
-                        "Reverse transcriptase", // moved correct to B
-                        "DNA polymerase",
-                        "RNA polymerase"
-                    ],
-                    "answer": 1,
-                    "explanation": "Reverse transcriptase synthesises complementary DNA (cDNA) using mRNA as a template."
-                },
-                {
-                    "id": "u3aos1-q54",
-                    "question": "What is one feature that makes CRISPR-Cas9 revolutionary in genetic engineering?",
-                    "options": [
-                        "It is highly specific and programmable", // moved correct to A
-                        "It cannot cut DNA",
-                        "It only works in plants",
-                        "It increases mutation rates randomly"
-                    ],
-                    "answer": 0,
-                    "explanation": "CRISPR-Cas9 can target specific DNA sequences for cutting, enabling precise gene editing."
-                },
-                {
-                    "id": "u3aos1-q55",
-                    "question": "What is meant by the term 'universal genetic code'?",
-                    "options": [
-                        "All organisms use different codes",
-                        "Each species has a unique set of amino acids",
-                        "Only humans share a common code",
-                        "The same codons code for the same amino acids in almost all organisms" // moved correct to D
-                    ],
-                    "answer": 3,
-                    "explanation": "The genetic code is nearly universal across species, meaning codons have the same meaning in most organisms."
-                },
-                {
-                    "id": "u3aos1-q56",
-                    "question": "Which cellular process results in the production of a polypeptide chain?",
-                    "options": [
-                        "Replication",
-                        "Splicing",
-                        "Translation", // moved correct to C
-                        "Transcription"
-                    ],
-                    "answer": 2,
-                    "explanation": "Translation is the process of converting the mRNA sequence into a polypeptide chain."
-                },
-                {
-                    "id": "u3aos1-q57",
-                    "question": "In which cell compartment does RNA splicing occur?",
-                    "options": [
-                        "Nucleus", // moved correct to A
-                        "Cytoplasm",
-                        "Ribosome",
-                        "Golgi apparatus"
-                    ],
-                    "answer": 0,
-                    "explanation": "RNA splicing occurs in the nucleus before mRNA exits to the cytoplasm for translation."
-                },
-                {
-                    "id": "u3aos1-q58",
-                    "question": "Which part of the gene is transcribed but not translated?",
-                    "options": [
-                        "Promoter",
-                        "Exon",
-                        "Intron", // moved correct to C
-                        "Start codon"
-                    ],
-                    "answer": 2,
-                    "explanation": "Introns are transcribed into pre-mRNA but removed during RNA processing and not translated."
-                },
-                {
-                    "id": "u3aos1-q59",
-                    "question": "Which process increases the amount of DNA for analysis in forensic science?",
-                    "options": ["CRISPR", "Recombinant plasmids", "PCR", "Gel electrophoresis"],
-                    "answer": 2,
-                    "explanation": "PCR is used to amplify small DNA samples for analysis, such as in forensic cases."
-                },
-                {
-                    "id": "u3aos1-q60",
-                    "question": "What is the function of a poly-A tail in mRNA?",
-                    "options": ["Initiates translation", "Protects mRNA and aids export from the nucleus", "Starts transcription", "Synthesises proteins"],
-                    "answer": 1,
-                    "explanation": "The poly-A tail stabilises mRNA and helps with transport from the nucleus to the cytoplasm."
-                },
-                {
-                    "id": "u3aos1-q61",
-                    "question": "What is the role of tRNA in translation?",
-                    "options": ["Transcribes DNA into RNA", "Synthesises proteins", "Brings amino acids to the ribosome", "Signals the end of transcription"],
-                    "answer": 2,
-                    "explanation": "tRNA transports specific amino acids to the ribosome based on codon-anticodon pairing."
-                },
-                {
-                    "id": "u3aos1-q62",
-                    "question": "What does a stop codon signal?",
-                    "options": ["Start of transcription", "End of translation", "Start of replication", "End of mRNA processing"],
-                    "answer": 1,
-                    "explanation": "A stop codon signals the end of translation and causes the ribosome to release the polypeptide."
-                },
-                {
-                    "id": "u3aos1-q63",
-                    "question": "Which DNA manipulation enzyme is used to cut DNA at specific sequences?",
-                    "options": ["DNA ligase", "RNA polymerase", "Endonuclease", "DNA helicase"],
-                    "answer": 2,
-                    "explanation": "Endonucleases (restriction enzymes) cut DNA at specific recognition sites."
-                },
-                {
-                    "id": "u3aos1-q64",
-                    "question": "How do genetically modified crops help reduce pesticide use?",
-                    "options": ["They have stronger roots", "They photosynthesise more efficiently", "They are engineered to be pest-resistant", "They decompose faster"],
-                    "answer": 2,
-                    "explanation": "GM crops can be engineered to produce pest-resistant proteins, reducing the need for pesticides."
-                },
-                {
-                    "id": "u3aos1-q65",
-                    "question": "What is the name for all the proteins an organism can produce?",
-                    "options": ["Genome", "Transcriptome", "Proteome", "Enzymome"],
-                    "answer": 2,
-                    "explanation": "The proteome is the full set of proteins expressed by an organism."
-                },
-                {
-                    "id": "u3aos1-q66",
-                    "question": "Which molecular tool is used to identify individuals in forensic investigations?",
-                    "options": ["Poly-A tail", "PCR", "CRISPR", "Gel electrophoresis"],
-                    "answer": 3,
-                    "explanation": "Gel electrophoresis is used to compare DNA fragment patterns for identification."
-                },
-                {
-                    "id": "u3aos1-q67",
-                    "question": "Which organelle is primarily responsible for producing ATP, which powers protein synthesis?",
-                    "options": ["Nucleus", "Golgi apparatus", "Ribosome", "Mitochondrion"], // correct -> D
-                    "answer": 3,
-                    "explanation": "The mitochondrion produces ATP, which supplies energy for cellular processes like protein synthesis."
-                },
-                {
-                    "id": "u3aos1-q68",
-                    "question": "Which level of protein structure involves hydrogen bonding between backbone atoms?",
-                    "options": ["Primary", "Quaternary", "Secondary", "Tertiary"], // correct -> C
-                    "answer": 2,
-                    "explanation": "Secondary structure involves alpha-helices and beta-sheets stabilized by hydrogen bonds."
-                },
-                {
-                    "id": "u3aos1-q69",
-                    "question": "What is one benefit of CRISPR over older gene-editing methods?",
-                    "options": ["It is programmable and specific", "It’s less accurate", "It works randomly", "It edits RNA, not DNA"], // correct -> A
-                    "answer": 0,
-                    "explanation": "CRISPR is programmable to target specific DNA sequences, increasing precision."
-                },
-                {
-                    "id": "u3aos1-q70",
-                    "question": "What is a transgenic organism?",
-                    "options": ["An organism lacking a nucleus", "An organism produced by binary fission", "An organism with deleted genes", "An organism with DNA from another species"], // correct -> D
-                    "answer": 3,
-                    "explanation": "A transgenic organism contains foreign DNA from another species in its genome."
-                },
-                {
-                    "id": "u3aos1-q71",
-                    "question": "Which of the following is NOT a part of the protein secretory pathway?",
-                    "options": ["Golgi apparatus", "Lysosome", "Rough ER", "Ribosome"], // correct -> B
-                    "answer": 1,
-                    "explanation": "Lysosomes are involved in degradation, not secretion."
-                },
-                {
-                    "id": "u3aos1-q72",
-                    "question": "Why is the genetic code called a 'triplet code'?",
-                    "options": ["Three nucleotides code for one amino acid", "Each gene is three codons long", "Three RNA molecules are needed for protein synthesis", "Proteins are made of three parts"], // correct -> A
-                    "answer": 0,
-                    "explanation": "Each codon is a sequence of three nucleotides that specifies one amino acid."
-                },
-                {
-                    "id": "u3aos1-q73",
-                    "question": "Which of the following best describes a promoter?",
-                    "options": ["A coding sequence", "A site where transcription begins", "A protein product", "An RNA processing enzyme"], // correct -> B
-                    "answer": 1,
-                    "explanation": "The promoter is a DNA sequence where RNA polymerase binds to start transcription."
-                },
-                {
-                    "id": "u3aos1-q74",
-                    "question": "What feature makes DNA a good information storage molecule?",
-                    "options": ["Its single-stranded nature", "Its strong ionic bonds", "Its role in protein folding", "Its ability to replicate and base pair"], // correct -> D
-                    "answer": 3,
-                    "explanation": "The double-helix structure and complementary base pairing make DNA stable and replicable."
-                },
-                {
-                    "id": "u3aos1-q75",
-                    "question": "Why are introns removed from RNA?",
-                    "options": ["They do not code for proteins", "They mutate easily", "They are unstable", "They are RNA viruses"], // correct -> A
-                    "answer": 0,
-                    "explanation": "Introns are non-coding regions that are removed to form a functional mRNA strand."
-                },
-                {
-                    "id": "u3aos1-q76",
-                    "question": "Which technique uses an electric field to move DNA fragments through a gel?",
-                    "options": ["CRISPR", "Polymerase Chain Reaction", "Electroporation", "Gel electrophoresis"],
-                    "answer": 3,
-                    "explanation": "Gel electrophoresis separates DNA fragments based on size using an electric field."
-                },
-                {
-                    "id": "u3aos1-q77",
-                    "question": "What is the role of mRNA in protein synthesis?",
-                    "options": ["Brings amino acids", "Forms the ribosome", "Carries the genetic message", "Cuts introns"],
-                    "answer": 2,
-                    "explanation": "mRNA carries the sequence of codons that instruct the ribosome which amino acids to add."
-                },
-                {
-                    "id": "u3aos1-q78",
-                    "question": "Which of the following best defines an operon?",
-                    "options": ["A group of codons in mRNA", "A unit of DNA with multiple genes under one promoter", "A part of the tRNA", "An enzyme that splices RNA"],
-                    "answer": 1,
-                    "explanation": "An operon is a cluster of genes under control of a single promoter and operator in prokaryotes."
-                },
-                {
-                    "id": "u3aos1-q79",
-                    "question": "Which molecule catalyses the formation of peptide bonds during translation?",
-                    "options": ["DNA polymerase", "RNA polymerase", "Ribosomal RNA", "Peptidyl transferase"],
-                    "answer": 3,
-                    "explanation": "Peptidyl transferase is a ribosomal enzyme that forms peptide bonds between amino acids."
-                },
-                {
-                    "id": "u3aos1-q80",
-                    "question": "What is one advantage of using recombinant plasmids in biotechnology?",
-                    "options": ["They replace human genes", "They carry antibiotic resistance", "They allow easy insertion of foreign genes", "They eliminate introns"],
-                    "answer": 2,
-                    "explanation": "Recombinant plasmids are used as vectors to introduce specific genes into host cells."
+                    "id": "u3aos1-q1",
+        "question": "Which molecule carries the genetic instructions used in the growth, development, functioning, and reproduction of all known living organisms?",
+        "options": ["mRNA", "DNA", "tRNA", "rRNA"],
+        "answer": 1,
+        "explanation": "DNA stores genetic information used in the synthesis of proteins and governs cell activities."
+    },
+    {
+        "id": "u3aos1-q2",
+        "question": "What type of bond joins nucleotides together in a single strand of DNA?",
+        "options": ["Hydrogen bond", "Ionic bond", "Peptide bond", "Phosphodiester bond"],
+        "answer": 3,
+        "explanation": "Phosphodiester bonds link the sugar of one nucleotide to the phosphate of the next in the DNA backbone."
+    },
+    {
+        "id": "u3aos1-q3",
+        "question": "Which process converts the genetic code carried by mRNA into a polypeptide chain?",
+        "options": ["Transcription", "Translation", "Replication", "Splicing"],
+        "answer": 1,
+        "explanation": "Translation occurs at the ribosome where mRNA is decoded to produce a specific polypeptide."
+    },
+    {
+        "id": "u3aos1-q4",
+        "question": "What is the function of a repressor protein in the trp operon?",
+        "options": [
+            "To prevent transcription when tryptophan is high",
+            "To catalyse amino acid synthesis",
+            "To enhance transcription",
+            "To initiate translation"
+        ],
+        "answer": 0,
+        "explanation": "When tryptophan levels are high, the repressor protein binds to the operator, blocking RNA polymerase."
+    },
+    {
+        "id": "u3aos1-q5",
+        "question": "Which structure packages and modifies proteins before they are secreted from the cell?",
+        "options": ["Nucleus", "Rough ER", "Lysosome", "Golgi apparatus"],
+        "answer": 3,
+        "explanation": "The Golgi apparatus modifies, sorts, and packages proteins for secretion or delivery to other organelles."
+    },
+    {
+        "id": "u3aos1-q6",
+        "question": "Which of the following RNA types is responsible for bringing amino acids to the ribosome?",
+        "options": ["tRNA", "mRNA", "rRNA", "snRNA"],
+        "answer": 0,
+        "explanation": "tRNA carries specific amino acids to the ribosome based on the codon-anticodon pairing during translation."
+    },
+    {
+        "id": "u3aos1-q7",
+        "question": "Which nucleotide is found in RNA but not in DNA?",
+        "options": ["Adenine", "Guanine", "Thymine", "Uracil"],
+        "answer": 3,
+        "explanation": "Uracil is present in RNA instead of thymine, which is found in DNA."
+    },
+    {
+        "id": "u3aos1-q8",
+        "question": "What is the first step of gene expression?",
+        "options": ["Translation", "RNA processing", "Transcription", "DNA replication"],
+        "answer": 2,
+        "explanation": "Transcription is the process where a gene's DNA sequence is copied into RNA."
+    },
+    {
+        "id": "u3aos1-q9",
+        "question": "What process removes introns and joins exons in pre-mRNA?",
+        "options": ["Replication", "Capping", "Translation", "RNA splicing"],
+        "answer": 3,
+        "explanation": "RNA splicing removes introns and joins exons to produce mature mRNA."
+    },
+    {
+        "id": "u3aos1-q10",
+        "question": "Which region of a gene acts as a binding site for RNA polymerase?",
+        "options": ["Exon", "Operator", "Promoter", "Intron"],
+        "answer": 2,
+        "explanation": "The promoter region is where RNA polymerase binds to initiate transcription."
+    },
+    {
+        "id": "u3aos1-q11",
+        "question": "In eukaryotic cells, where does transcription take place?",
+        "options": ["Ribosome", "Cytoplasm", "Golgi apparatus", "Nucleus"],
+        "answer": 3,
+        "explanation": "Transcription occurs inside the nucleus of eukaryotic cells."
+    },
+    {
+        "id": "u3aos1-q12",
+        "question": "What is the correct order of events in gene expression?",
+        "options": [
+            "Translation → RNA processing → Transcription",
+            "Transcription → RNA processing → Translation",
+            "RNA processing → Transcription → Translation",
+            "Translation → Transcription → RNA processing"
+        ],
+        "answer": 1,
+        "explanation": "Gene expression follows this sequence: transcription, RNA processing, then translation."
+    },
+    {
+        "id": "u3aos1-q13",
+        "question": "Which bond forms between amino acids in a growing polypeptide chain?",
+        "options": ["Hydrogen bond", "Peptide bond", "Glycosidic bond", "Phosphodiester bond"],
+        "answer": 1,
+        "explanation": "A peptide bond links the carboxyl group of one amino acid to the amino group of another."
+    },
+    {
+        "id": "u3aos1-q14",
+        "question": "Which level of protein structure refers to the sequence of amino acids?",
+        "options": ["Primary", "Secondary", "Tertiary", "Quaternary"],
+        "answer": 0,
+        "explanation": "Primary structure is the linear sequence of amino acids in a polypeptide chain."
+    },
+    {
+        "id": "u3aos1-q15",
+        "question": "What is a proteome?",
+        "options": [
+            "A type of genome",
+            "The total RNA content",
+            "All the proteins an organism can produce",
+            "The group of enzymes used in transcription"
+        ],
+        "answer": 2,
+        "explanation": "The proteome is the complete set of proteins expressed by an organism."
+    },
+    {
+        "id": "u3aos1-q16",
+        "question": "What is the role of endonucleases in DNA manipulation?",
+        "options": [
+            "To synthesise DNA strands",
+            "To cut DNA at specific sequences",
+            "To amplify DNA",
+            "To join fragments of DNA"
+        ],
+        "answer": 1,
+        "explanation": "Endonucleases cut DNA at specific recognition sites, useful for gene editing and cloning."
+    },
+    {
+        "id": "u3aos1-q17",
+        "question": "What does PCR stand for?",
+        "options": [
+            "Protein Chain Reaction",
+            "Polymerase Chain Reaction",
+            "Peptide Coding Reaction",
+            "Protein Coding Replication"
+        ],
+        "answer": 1,
+        "explanation": "PCR stands for Polymerase Chain Reaction, a technique used to amplify DNA."
+    },
+    {
+        "id": "u3aos1-q18",
+        "question": "Which enzyme is used to join DNA fragments together?",
+        "options": ["Ligase", "Endonuclease", "Helicase", "RNA polymerase"],
+        "answer": 0,
+        "explanation": "Ligase joins DNA fragments by forming phosphodiester bonds."
+    },
+    {
+        "id": "u3aos1-q19",
+        "question": "What feature of the CRISPR-Cas9 system allows bacteria to recognise and target a virus during a second infection?",
+        "options": [
+            "The protospacer adjacent motif (PAM) sequence",
+            "The nucleotide repeats in the CRISPR array",
+            "The spacers derived from previously encountered viral DNA",
+            "The Cas9 protein acting as molecular scissors"
+        ],
+        "answer": 2,
+        "explanation": "Spacers in the CRISPR array are segments of viral DNA integrated after an infection. These act as a ‘memory’, enabling bacteria to recognise and target the same virus during subsequent invasions."
+    },
+    {
+        "id": "u3aos1-q20",
+        "question": "In DNA profiling, what is the purpose of gel electrophoresis?",
+        "options": ["To cut DNA", "To replicate DNA", "To separate DNA fragments by size", "To sequence DNA"],
+        "answer": 2,
+        "explanation": "Gel electrophoresis separates DNA fragments based on size, producing a banding pattern."
+    },
+    {
+        "id": "u3aos1-q21",
+        "question": "Which process is used to produce large quantities of a specific DNA segment in vitro?",
+        "options": ["Gel electrophoresis", "Transformation", "PCR", "CRISPR"],
+        "answer": 2,
+        "explanation": "PCR (Polymerase Chain Reaction) is used to amplify specific DNA sequences."
+    },
+    {
+        "id": "u3aos1-q22",
+        "question": "Which organelle is directly involved in the synthesis of proteins for export?",
+        "options": ["Smooth ER", "Rough ER", "Mitochondrion", "Nucleus"],
+        "answer": 1,
+        "explanation": "The rough endoplasmic reticulum synthesises proteins that are usually exported from the cell."
+    },
+    {
+        "id": "u3aos1-q23",
+        "question": "What type of RNA forms part of the structure of ribosomes?",
+        "options": ["mRNA", "tRNA", "rRNA", "siRNA"],
+        "answer": 2,
+        "explanation": "rRNA (ribosomal RNA) combines with proteins to form ribosomes."
+    },
+    {
+        "id": "u3aos1-q24",
+        "question": "Which of the following best describes an exon?",
+        "options": [
+            "A coding segment retained in mature mRNA",
+            "A non-coding region removed during RNA processing",
+            "A regulatory DNA region",
+            "A promoter region"
+        ],
+        "answer": 0,
+        "explanation": "Exons are coding regions that remain in the mature mRNA after splicing."
+    },
+    {
+        "id": "u3aos1-q25",
+        "question": "Which of the following best defines a plasmid?",
+        "options": [
+            "A eukaryotic gene",
+            "A viral genome",
+            "An RNA virus",
+            "A circular DNA molecule found in bacteria"
+        ],
+        "answer": 3,
+        "explanation": "Plasmids are small circular DNA molecules used in genetic engineering to carry foreign genes."
+    },
+    {
+        "id": "u3aos1-q26",
+        "question": "What is the main function of DNA ligase in genetic engineering?",
+        "options": [
+            "To bind DNA fragments together",
+            "To cut DNA at specific sites",
+            "To replicate DNA strands",
+            "To synthesise proteins"
+        ],
+        "answer": 0,
+        "explanation": "DNA ligase joins DNA fragments by forming phosphodiester bonds between them."
+    },
+    {
+        "id": "u3aos1-q27",
+        "question": "Which structure contains the promoter region of a gene?",
+        "options": ["Intron", "Exon", "Ribosome", "DNA upstream of the coding region"],
+        "answer": 3,
+        "explanation": "The promoter is located upstream of the gene's coding region and facilitates RNA polymerase binding."
+    },
+    {
+        "id": "u3aos1-q28",
+        "question": "What is a key feature of the genetic code?",
+        "options": [
+            "It is species-specific",
+            "Each amino acid has only one codon",
+            "It is degenerate",
+            "It uses doublet codes"
+        ],
+        "answer": 2,
+        "explanation": "The genetic code is degenerate, meaning more than one codon can code for the same amino acid."
+    },
+    {
+        "id": "u3aos1-q29",
+        "question": "Which of the following enzymes is used during transcription?",
+        "options": ["DNA polymerase", "RNA polymerase", "Ligase", "Helicase"],
+        "answer": 1,
+        "explanation": "RNA polymerase is responsible for synthesising RNA from a DNA template."
+    },
+    {
+        "id": "u3aos1-q30",
+        "question": "Which process involves the removal of introns from a newly synthesized RNA transcript?",
+        "options": ["Replication", "Splicing", "Translation", "Translocation"],
+        "answer": 1,
+        "explanation": "Splicing removes non-coding introns and joins exons to form mature mRNA."
+    },
+    {
+        "id": "u3aos1-q31",
+        "question": "In recombinant DNA technology, what is the role of a bacterial plasmid?",
+        "options": ["To splice mRNA", "To amplify DNA", "To act as a vector for gene transfer", "To cut DNA"],
+        "answer": 2,
+        "explanation": "A plasmid is used as a vector to carry foreign DNA into a host cell."
+    },
+    {
+        "id": "u3aos1-q32",
+        "question": "Which of the following correctly outlines the pathway of a secreted protein, including transport via vesicles?",
+        "options": [
+            "Ribosome → Nucleus → Vesicle → Plasma membrane",
+            "Rough ER → Vesicle → Golgi apparatus → Vesicle → Plasma membrane",
+            "Smooth ER → Vesicle → Lysosome → Plasma membrane",
+            "Ribosome → Cytosol → Golgi apparatus → Vesicle → Nucleus"
+        ],
+        "answer": 1,
+        "explanation": "Proteins destined for secretion are synthesised in the rough ER, transported in vesicles to the Golgi apparatus, and then carried in vesicles to the plasma membrane for export."
+    },
+    {
+        "id": "u3aos1-q33",
+        "question": "What is the complementary mRNA sequence for the DNA template strand 3'-TAC GGT ACT-5'?",
+        "options": [
+            "5'-AUG CCA UGA-3'",
+            "5'-ATG CCA TGA-3'",
+            "5'-UAC GGU ACU-3'",
+            "5'-AUG CCG UGA-3'"
+        ],
+        "answer": 0,
+        "explanation": "During transcription, RNA polymerase builds an mRNA strand complementary to the DNA template strand using RNA bases (A pairs with U, T with A, C with G, and G with C). Thus, 3'-TAC GGT ACT-5' becomes 5'-AUG CCA UGA-3'."
+    },
+    {
+        "id": "u3aos1-q34",
+        "question": "During transcription, what is the specific role of RNA polymerase?",
+        "options": [
+            "To transcribe tRNA into mRNA",
+            "To join amino acids together to form a polypeptide",
+            "To bind to the DNA template strand and synthesise complementary RNA",
+            "To translate mRNA into a protein using ribosomes"
+        ],
+        "answer": 2,
+        "explanation": "RNA polymerase binds to the DNA template strand and catalyses the synthesis of a complementary RNA strand during transcription."
+    },
+    {
+        "id": "u3aos1-q35",
+        "question": "What is the role of the operator region in the trp operon?",
+        "options": [
+            "Synthesises tryptophan",
+            "Initiates transcription",
+            "Codes for proteins",
+            "Binds to repressors"
+        ],
+        "answer": 3,
+        "explanation": "The operator binds to a repressor protein to regulate gene transcription in operons."
+    },
+    {
+        "id": "u3aos1-q36",
+        "question": "Which process takes place at the ribosome?",
+        "options": ["Translation", "Transcription", "Replication", "Splicing"],
+        "answer": 0,
+        "explanation": "Translation occurs at the ribosome, where the mRNA code is used to build a polypeptide."
+    },
+    {
+        "id": "u3aos1-q37",
+        "question": "What type of RNA carries the genetic code from DNA to the ribosome?",
+        "options": ["rRNA", "tRNA", "siRNA", "mRNA"],
+        "answer": 3,
+        "explanation": "mRNA carries the genetic message transcribed from DNA to the ribosome."
+    },
+    {
+        "id": "u3aos1-q38",
+        "question": "What are the building blocks of proteins?",
+        "options": ["Amino acids", "Nucleotides", "Monosaccharides", "Fatty acids"],
+        "answer": 0,
+        "explanation": "Proteins are made from amino acid monomers linked together by peptide bonds."
+    },
+    {
+        "id": "u3aos1-q39",
+        "question": "Why must the human insulin gene be modified before being inserted into a bacterial plasmid for commercial production?",
+        "options": [
+            "Bacteria cannot transcribe genes that contain introns",
+            "Bacteria cannot replicate circular plasmids",
+            "Bacteria only express genes located next to antibiotic resistance genes",
+            "Bacteria require genes to be double-stranded RNA"
+        ],
+        "answer": 0,
+        "explanation": "The human insulin gene contains introns which bacteria cannot process. Therefore, introns are removed before the gene is inserted into the plasmid."
+    },
+    {
+        "id": "u3aos1-q40",
+        "question": "Which technique separates DNA fragments based on size?",
+        "options": ["CRISPR", "PCR", "Plasmid insertion", "Gel electrophoresis"],
+        "answer": 3,
+        "explanation": "Gel electrophoresis sorts DNA fragments by length as they move through a gel matrix."
+    },
+    {
+        "id": "u3aos1-q41",
+        "question": "Why are two different plasmids used in the commercial production of human insulin?",
+        "options": [
+            "Each plasmid carries a different insulin polypeptide gene that must be expressed in separate bacteria",
+            "One plasmid is used for transcription and the other for translation",
+            "One plasmid is responsible for removing introns, while the other produces β-galactosidase",
+            "One plasmid is used to produce the insulin gene and the other is used to destroy it"
+        ],
+        "answer": 0,
+        "explanation": "Two plasmids are used because insulin consists of two separate polypeptide chains (A and B). These are produced separately in different bacteria and then combined later to form functional insulin."
+    },
+    {
+        "id": "u3aos1-q42",
+        "question": "After the fusion proteins are expressed in the bacteria, what is the next step in the production of functional insulin?",
+        "options": [
+            "The plasmid is reinserted into the nucleus of the bacteria",
+            "The fusion proteins are purified and the insulin polypeptides are isolated and combined",
+            "The introns are removed using restriction enzymes",
+            "The β-galactosidase is directly converted into insulin"
+        ],
+        "answer": 1,
+        "explanation": "Once the fusion proteins are produced, they are purified and the insulin polypeptides are separated and finally combined to form functional human insulin."
+    },
+    {
+        "id": "u3aos1-q43",
+        "question": "What is the purpose of RNA processing in eukaryotic cells?",
+        "options": [
+            "To translate mRNA into protein",
+            "To convert tRNA to rRNA",
+            "To modify pre-mRNA into mature mRNA",
+            "To produce introns"
+        ],
+        "answer": 2,
+        "explanation": "RNA processing removes introns and adds modifications to form mature mRNA."
+    },
+    {
+        "id": "u3aos1-q44",
+        "question": "Which RNA modification is added to the 5' end of eukaryotic pre-mRNA?",
+        "options": ["Poly-A tail", "Spliceosome", "5' cap", "Exon"],
+        "answer": 2,
+        "explanation": "A 5' methyl cap is added to protect the RNA and assist in ribosome binding during translation."
+    },
+    {
+        "id": "u3aos1-q45",
+        "question": "What is the role of a start codon in translation?",
+        "options": [
+            "Signals where transcription ends",
+            "Marks the beginning of RNA splicing",
+            "Initiates protein synthesis",
+            "Activates DNA polymerase"
+        ],
+        "answer": 2,
+        "explanation": "The start codon (AUG) signals the beginning of translation and codes for methionine."
+    },
+    {
+        "id": "u3aos1-q46",
+        "question": "What happens to proteins after they are synthesised in the rough ER?",
+        "options": [
+            "They are degraded",
+            "They are stored in the nucleus",
+            "They are modified in the Golgi apparatus",
+            "They are exported directly"
+        ],
+        "answer": 2,
+        "explanation": "Proteins are transported to the Golgi apparatus for further modification and sorting."
+    },
+    {
+        "id": "u3aos1-q47",
+        "question": "Which of the following best describes gene expression?",
+        "options": [
+            "Replication of DNA",
+            "Protein folding",
+            "Splicing of RNA",
+            "Use of a gene to synthesise a functional product"
+        ],
+        "answer": 3,
+        "explanation": "Gene expression refers to the process where the information in a gene is used to produce a functional product, typically a protein."
+    },
+    {
+        "id": "u3aos1-q48",
+        "question": "What is a degenerate code in genetics?",
+        "options": [
+            "A code where multiple codons specify the same amino acid",
+            "A code that changes often",
+            "A code that causes mutations",
+            "A code that affects DNA replication"
+        ],
+        "answer": 0,
+        "explanation": "The genetic code is degenerate because more than one codon can specify the same amino acid."
+    },
+    {
+        "id": "u3aos1-q49",
+        "question": "Which of the following is an ethical concern associated with gene editing in humans?",
+        "options": [
+            "Faster disease diagnosis",
+            "Improved crop yields",
+            "Higher insulin production",
+            "Unintended effects on future generations"
+        ],
+        "answer": 3,
+        "explanation": "Editing the human genome may have long-term effects on future generations, raising ethical issues."
+    },
+    {
+        "id": "u3aos1-q50",
+        "question": "How are genetically modified organisms (GMOs) used in agriculture?",
+        "options": [
+            "To increase crop resistance and yield",
+            "To delay protein synthesis",
+            "To reduce soil fertility",
+            "To produce new human genes"
+        ],
+        "answer": 0,
+        "explanation": "GMOs are engineered to be more productive and resistant to pests, diseases, or environmental conditions."
+    },
+    {
+        "id": "u3aos1-q51",
+        "question": "What type of bond stabilises the secondary structure of a protein?",
+        "options": ["Peptide bonds", "Hydrogen bonds", "Ionic bonds", "Disulfide bonds"],
+        "answer": 1,
+        "explanation": "Hydrogen bonds form between backbone atoms and stabilise alpha-helices and beta-sheets in proteins."
+    },
+    {
+        "id": "u3aos1-q52",
+        "question": "Which structure in a prokaryotic operon controls access of RNA polymerase to the genes?",
+        "options": ["Start codon", "Repressor gene", "Exon", "Operator region"],
+        "answer": 3,
+        "explanation": "The operator region can bind a repressor to block RNA polymerase from transcribing the genes."
+    },
+    {
+        "id": "u3aos1-q53",
+        "question": "Which of the following enzymes is used to make complementary DNA (cDNA) from mRNA?",
+        "options": ["RNA polymerase", "Ligase", "DNA polymerase", "Reverse transcriptase"],
+        "answer": 3,
+        "explanation": "Reverse transcriptase synthesises complementary DNA (cDNA) using mRNA as a template."
+    },
+    {
+        "id": "u3aos1-q54",
+        "question": "Which statement correctly distinguishes between genetically modified organisms (GMOs) and transgenic organisms?",
+        "options": [
+            "All genetically modified organisms contain genes from a different species, whereas transgenic organisms do not",
+            "Genetically modified organisms include any organism with altered DNA, while transgenic organisms specifically contain DNA from another species",
+            "Transgenic organisms include any organism whose DNA has been altered, whereas genetically modified organisms must contain foreign DNA",
+            "Only transgenic organisms are created using recombinant DNA technology"
+        ],
+        "answer": 1,
+        "explanation": "A genetically modified organism is any organism whose genome has been altered using biotechnology. A transgenic organism is a type of GMO that specifically contains a gene from a different species."
+    },
+    {
+        "id": "u3aos1-q55",
+        "question": "What is meant by the term 'universal genetic code'?",
+        "options": [
+            "All organisms use different codes",
+            "Only humans share a common code",
+            "Each species has a unique set of amino acids",
+            "The same codons code for the same amino acids in almost all organisms"
+        ],
+        "answer": 3,
+        "explanation": "The genetic code is nearly universal across species, meaning codons have the same meaning in most organisms."
+    },
+    {
+        "id": "u3aos1-q56",
+        "question": "Which cellular process results in the production of a polypeptide chain?",
+        "options": ["Replication", "Translation", "Transcription", "Splicing"],
+        "answer": 1,
+        "explanation": "Translation is the process of converting the mRNA sequence into a polypeptide chain."
+    },
+    {
+        "id": "u3aos1-q57",
+        "question": "In which cell compartment does RNA splicing occur?",
+        "options": ["Cytoplasm", "Ribosome", "Golgi apparatus", "Nucleus"],
+        "answer": 3,
+        "explanation": "RNA splicing occurs in the nucleus before mRNA exits to the cytoplasm for translation."
+    },
+    {
+        "id": "u3aos1-q58",
+        "question": "Which part of the gene is transcribed but not translated?",
+        "options": ["Promoter", "Intron", "Start codon", "Exon"],
+        "answer": 1,
+        "explanation": "Introns are transcribed into pre-mRNA but removed during RNA processing and not translated."
+    },
+    {
+        "id": "u3aos1-q59",
+        "question": "Which process increases the amount of DNA for analysis in forensic science?",
+        "options": ["CRISPR", "Recombinant plasmids", "PCR", "Gel electrophoresis"],
+        "answer": 2,
+        "explanation": "PCR is used to amplify small DNA samples for analysis, such as in forensic cases."
+    },
+    {
+        "id": "u3aos1-q60",
+        "question": "What is the function of a poly-A tail in mRNA?",
+        "options": [
+            "Initiates translation",
+            "Protects mRNA and aids export from the nucleus",
+            "Starts transcription",
+            "Synthesises proteins"
+        ],
+        "answer": 1,
+        "explanation": "The poly-A tail stabilises mRNA and helps with transport from the nucleus to the cytoplasm."
+    },
+    {
+        "id": "u3aos1-q61",
+        "question": "Which sequence correctly describes the order of steps in a PCR cycle?",
+        "options": [
+            "Annealing → Extension → Denaturation",
+            "Denaturation → Annealing → Extension",
+            "Extension → Denaturation → Annealing",
+            "Annealing → Denaturation → Extension"
+        ],
+        "answer": 1,
+        "explanation": "PCR begins with denaturation (to separate the DNA strands), followed by annealing of primers to the target sequences, and finally extension, where DNA polymerase synthesises new strands."
+    },
+    {
+        "id": "u3aos1-q62",
+        "question": "In DNA profiling, why are short tandem repeats (STRs) useful for distinguishing between individuals?",
+        "options": [
+            "STRs are identical in all individuals and provide a consistent reference point",
+            "STRs are longer than normal genes and therefore easier to amplify",
+            "STRs are only found in genes, so any difference directly alters phenotype",
+            "The number of repeated sequences in STR regions varies greatly between individuals"
+        ],
+        "answer": 3,
+        "explanation": "STRs are short, non-coding sequences that differ in the number of repeats among individuals. This variation allows amplified STR regions to be compared using gel electrophoresis to distinguish between individuals."
+    },
+    {
+        "id": "u3aos1-q63",
+        "question": "During gel electrophoresis of PCR products, why do smaller DNA fragments travel further through the gel?",
+        "options": [
+            "Because larger fragments are attracted to the positive electrode",
+            "Because all fragments move at the same rate through the gel matrix",
+            "Because smaller fragments have stronger hydrogen bonds between bases",
+            "Because they experience less resistance moving through the pores of the gel"
+        ],
+        "answer": 3,
+        "explanation": "Smaller DNA fragments migrate further because they pass more easily through the pores of the agarose gel, whereas larger fragments experience more resistance and move more slowly."
+    },
+    {
+        "id": "u3aos1-q64",
+        "question": "What is the role of tRNA in translation?",
+        "options": [
+            "Transcribes DNA into RNA",
+            "Synthesises proteins",
+            "Brings amino acids to the ribosome",
+            "Signals the end of transcription"
+        ],
+        "answer": 2,
+        "explanation": "tRNA transports specific amino acids to the ribosome based on codon-anticodon pairing."
+    },
+    {
+        "id": "u3aos1-q65",
+        "question": "What does a stop codon signal?",
+        "options": [
+            "Start of transcription",
+            "End of translation",
+            "Start of replication",
+            "End of mRNA processing"
+        ],
+        "answer": 1,
+        "explanation": "A stop codon signals the end of translation and causes the ribosome to release the polypeptide."
+    },
+    {
+        "id": "u3aos1-q66",
+        "question": "Which DNA manipulation enzyme is used to cut DNA at specific sequences?",
+        "options": ["DNA ligase", "RNA polymerase", "Endonuclease", "DNA helicase"],
+        "answer": 2,
+        "explanation": "Endonucleases (restriction enzymes) cut DNA at specific recognition sites."
+    },
+    {
+        "id": "u3aos1-q67",
+        "question": "How do genetically modified crops help reduce pesticide use?",
+        "options": [
+            "They have stronger roots",
+            "They photosynthesise more efficiently",
+            "They are engineered to be pest-resistant",
+            "They decompose faster"
+        ],
+        "answer": 2,
+        "explanation": "GM crops can be engineered to produce pest-resistant proteins, reducing the need for pesticides."
+    },
+    {
+        "id": "u3aos1-q68",
+        "question": "What is the name for all the proteins an organism can produce?",
+        "options": ["Genome", "Transcriptome", "Proteome", "Enzymome"],
+        "answer": 2,
+        "explanation": "The proteome is the full set of proteins expressed by an organism."
+    },
+    {
+        "id": "u3aos1-q69",
+        "question": "Which molecular tool is used to identify individuals in forensic investigations?",
+        "options": ["Poly-A tail", "PCR", "CRISPR", "Gel electrophoresis"],
+        "answer": 3,
+        "explanation": "Gel electrophoresis is used to compare DNA fragment patterns for identification."
+    },
+    {
+        "id": "u3aos1-q70",
+        "question": "Which organelle is primarily responsible for producing ATP, which powers protein synthesis?",
+        "options": ["Nucleus", "Golgi apparatus", "Ribosome", "Mitochondrion"],
+        "answer": 3,
+        "explanation": "The mitochondrion produces ATP, which supplies energy for cellular processes like protein synthesis."
+    },
+    {
+        "id": "u3aos1-q71",
+        "question": "Which level of protein structure involves hydrogen bonding between backbone atoms?",
+        "options": ["Primary", "Quaternary", "Secondary", "Tertiary"],
+        "answer": 2,
+        "explanation": "Secondary structure involves alpha-helices and beta-sheets stabilized by hydrogen bonds."
+    },
+    {
+        "id": "u3aos1-q72",
+        "question": "What is one benefit of CRISPR over older gene-editing methods?",
+        "options": [
+            "It is programmable and specific",
+            "It’s less accurate",
+            "It works randomly",
+            "It edits RNA, not DNA"
+        ],
+        "answer": 0,
+        "explanation": "CRISPR is programmable to target specific DNA sequences, increasing precision."
+    },
+    {
+        "id": "u3aos1-q73",
+        "question": "What is a transgenic organism?",
+        "options": [
+            "An organism lacking a nucleus",
+            "An organism produced by binary fission",
+            "An organism with deleted genes",
+            "An organism with DNA from another species"
+        ],
+        "answer": 3,
+        "explanation": "A transgenic organism contains foreign DNA from another species in its genome."
+    },
+    {
+        "id": "u3aos1-q74",
+        "question": "Which of the following is NOT a part of the protein secretory pathway?",
+        "options": ["Golgi apparatus", "Lysosome", "Rough ER", "Ribosome"],
+        "answer": 1,
+        "explanation": "Lysosomes are involved in degradation, not secretion."
+    },
+    {
+        "id": "u3aos1-q75",
+        "question": "Why is the genetic code called a 'triplet code'?",
+        "options": [
+            "Three nucleotides code for one amino acid",
+            "Each gene is three codons long",
+            "Three RNA molecules are needed for protein synthesis",
+            "Proteins are made of three parts"
+        ],
+        "answer": 0,
+        "explanation": "Each codon is a sequence of three nucleotides that specifies one amino acid."
+    },
+    {
+        "id": "u3aos1-q76",
+        "question": "Which of the following best describes a promoter?",
+        "options": [
+            "A coding sequence",
+            "A site where transcription begins",
+            "A protein product",
+            "An RNA processing enzyme"
+        ],
+        "answer": 1,
+        "explanation": "The promoter is a DNA sequence where RNA polymerase binds to start transcription."
+    },
+    {
+        "id": "u3aos1-q77",
+        "question": "What feature makes DNA a good information storage molecule?",
+        "options": [
+            "Its single-stranded nature",
+            "Its strong ionic bonds",
+            "Its role in protein folding",
+            "Its ability to replicate and base pair"
+        ],
+        "answer": 3,
+        "explanation": "The double-helix structure and complementary base pairing make DNA stable and replicable."
+    },
+    {
+        "id": "u3aos1-q78",
+        "question": "Why are introns removed from RNA?",
+        "options": [
+            "They do not code for proteins",
+            "They mutate easily",
+            "They are unstable",
+            "They are RNA viruses"
+        ],
+        "answer": 0,
+        "explanation": "Introns are non-coding regions that are removed to form a functional mRNA strand."
+    },
+    {
+        "id": "u3aos1-q79",
+        "question": "Which technique uses an electric field to move DNA fragments through a gel?",
+        "options": ["CRISPR", "Polymerase Chain Reaction", "Electroporation", "Gel electrophoresis"],
+        "answer": 3,
+        "explanation": "Gel electrophoresis separates DNA fragments based on size using an electric field."
+    },
+    {
+        "id": "u3aos1-q80",
+        "question": "What is the role of mRNA in protein synthesis?",
+        "options": [
+            "Brings amino acids",
+            "Forms the ribosome",
+            "Carries the genetic message",
+            "Cuts introns"
+        ],
+        "answer": 2,
+        "explanation": "mRNA carries the sequence of codons that instruct the ribosome which amino acids to add."
+    },
+    {
+        "id": "u3aos1-q81",
+        "question": "Which of the following best defines an operon?",
+        "options": [
+            "A group of codons in mRNA",
+            "A unit of DNA with multiple genes under one promoter",
+            "A part of the tRNA",
+            "An enzyme that splices RNA"
+        ],
+        "answer": 1,
+        "explanation": "An operon is a cluster of genes under control of a single promoter and operator in prokaryotes."
                 }
             ],
 
