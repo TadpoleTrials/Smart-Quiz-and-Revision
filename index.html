@@ -8,36 +8,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Futura:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        @media (max-width: 768px) {
-            .logo-img {
-                height: 50px;
-            }
-
-            .subtitle {
-                font-size: 1rem;
-            }
-        }
-
-        .logo-container {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 10px;
-        }
-
-        .logo-img {
-            height: 80px;
-            width: auto;
-            transition: transform 0.2s ease;
-        }
-
-        .logo-img:hover {
-            transform: scale(1.05);
-        }
-
-        .subtitle {
-            margin-top: 0;
-        }
-
         :root {
             --primary: #008060;
             --secondary: #2D3748;
@@ -92,70 +62,105 @@
         .container {
             max-width: 1200px;
             margin: 0 auto;
-        }
-
-        header {
-            text-align: center;
-            padding: 20px 0;
-            margin-bottom: 30px;
-            background: var(--bg-main);
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-            text-transform: uppercase;
-            font-weight: 700;
-        }
-
-        .logo i {
-            font-size: 2.5rem;
-            color: var(--accent);
-        }
-
-        .logo h1 {
-            font-size: 2.2rem;
-        }
-
-        .logo .rank {
-            color: var(--accent);
-        }
-
-        .logo .biology {
-            color: var(--text-heading);
-        }
-
-        .subtitle {
-            color: var(--text-body);
-            font-size: 1.1rem;
-            margin-top: 5px;
-            letter-spacing: 0.5px;
-            font-weight: 500;
-        }
-
-        .aos-card h3 {
-            font-weight: 600;
-            color: var(--primary);
-            margin-bottom: 10px;
-            font-size: 1.1rem;
-        }
-
-        .aos-card p {
-            font-weight: 400;
-            color: var(--text-body);
-            font-size: 0.9rem;
-        }
-
-        .app-container {
             display: grid;
             grid-template-columns: 1fr 350px;
             gap: 25px;
         }
 
+        /* Header Styles */
+        header {
+            grid-column: 1 / -1;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            margin-bottom: 30px;
+            background: var(--bg-main);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+
+        .home-link {
+            text-decoration: none;
+            transition: opacity 0.2s ease;
+            display: flex;
+            align-items: center;
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        .home-link:hover {
+            opacity: 0.6;
+        }
+
+        .home-link i {
+            margin-right: 8px;
+        }    
+
+        .brand-container {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .logo-img {
+            height: 80px;
+            width: auto;
+            transition: transform 0.2s ease;
+        }
+
+        .logo-img:hover {
+            transform: scale(1.05);
+        }
+
+        .subtitle {
+            margin-top: 5px;
+            color: var(--text-body);
+            font-size: 1.1rem;
+            letter-spacing: 0.5px;
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .streak-display {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 15px;
+            background: var(--light-gray);
+            border-radius: var(--border-radius);
+        }
+
+        .streak-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .streak-label {
+            font-size: 0.9rem;
+            color: var(--text-heading);
+        }
+
+        .last-practice {
+            font-size: 0.8rem;
+            color: var(--text-body);
+        }
+
+        /* Main Content Styles */
         .main-content {
             background: var(--bg-main);
             border-radius: var(--border-radius);
@@ -311,6 +316,17 @@
         button.secondary:hover {
             background: var(--light-gray);
         }
+
+        #reviewModeBtn {
+    background-color: #e74c3c; /* Red background */
+    color: white; /* White text */
+    border: 1px solid #c0392b; /* Darker red border */
+}
+
+#reviewModeBtn:hover {
+    background-color: #c0392b; /* Darker red on hover */
+    transform: translateY(-2px);
+}
 
         .progress-section {
             margin-bottom: 30px;
@@ -538,6 +554,7 @@
             color: var(--text-footer);
             padding: 30px 0;
             margin-top: 50px;
+            grid-column: 1 / -1;
         }
 
         .footer-content {
@@ -589,36 +606,6 @@
             font-style: italic;
         }
 
-        .streak-display {
-            text-align: center;
-            padding: 20px;
-            background: var(--light-gray);
-            border-radius: var(--border-radius);
-            margin-bottom: 20px;
-        }
-
-        .streak-display .streak-value {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--primary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-
-        .streak-display .streak-label {
-            font-size: 1.1rem;
-            color: var(--text-heading);
-            margin-top: 5px;
-        }
-
-        .last-practice {
-            text-align: center;
-            color: var(--text-body);
-            font-size: 0.9rem;
-        }
-
         .modal {
             display: none;
             position: fixed;
@@ -668,14 +655,46 @@
             margin-right: 10px;
         }
 
+        /* Responsive Styles */
         @media (max-width: 900px) {
-            .app-container {
+            .container {
                 grid-template-columns: 1fr;
             }
-
+            
             .controls {
                 flex-direction: column;
                 align-items: stretch;
+            }
+            
+            .header-right {
+                display: none;
+            }
+            
+            header {
+                justify-content: center;
+            }
+            
+            .brand-container {
+                position: static;
+                transform: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .logo-img {
+                height: 50px;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            .streak-display {
+                padding: 8px 12px;
+            }
+            
+            .streak-value {
+                font-size: 1.2rem;
             }
         }
 
@@ -683,237 +702,240 @@
         @media (max-width: 900px) {
             body.quiz-active .sidebar {
                 display: none;
+            }
+        }
     </style>
 </head>
 
 <body>
     <div class="container">
         <header>
-            <div class="logo-container">
-                <a href="https://1strankbiology.com/" class="logo-link">
+            <a href="https://1strankbiology.com/" class="home-link">
+                <i class="fas fa-home"></i>  Home
+            </a>
+            
+            <div class="brand-container">
+                <a href="https://smartrevise.1strankbiology.com/" class="logo-link">
                     <img src="https://svkhhnulgictmdvqvwte.supabase.co/storage/v1/object/public/public-assets//Header.png"
-                        alt="1st Rank Biology Logo" class="logo-img">
+                         alt="1st Rank Biology Logo" class="logo-img">
                 </a>
+                <p class="subtitle">Smart Quiz & Review</p>
             </div>
-            <p class="subtitle">Smart Quiz & Review</p>
+            
+            <div class="header-right">
+                <div class="streak-display">
+                    <div>
+                        <div class="streak-value">
+                            <i class="fas fa-fire"></i>
+                            <span id="streak-days">0</span>
+                        </div>
+                        <div class="streak-label">Current Streak</div>
+                    </div>
+                </div>
+                <div class="last-practice">
+                    <p>Last: <span id="last-practice-date">Never</span></p>
+                </div>
+            </div>
         </header>
-        <div id="homeScreen">
-            <div class="aos-grid">
-                <div class="aos-card" data-aos="u3aos1">
-                    <img src="https://svkhhnulgictmdvqvwte.supabase.co/storage/v1/object/public/u3aos1icon/U3AOS1icon.png"
-                        class="aos-icon" alt="DNA icon">
-                    <h3>Unit 3 AOS 1</h3>
-                    <p>DNA, Proteins & Tech</p>
+
+        <div class="main-content">
+            <div id="homeScreen">
+                <div class="aos-grid">
+                    <div class="aos-card" data-aos="u3aos1">
+                        <img src="https://svkhhnulgictmdvqvwte.supabase.co/storage/v1/object/public/u3aos1icon/U3AOS1icon.png"
+                            class="aos-icon" alt="DNA icon">
+                        <h3>Unit 3 AOS 1</h3>
+                        <p>DNA, Proteins & Tech</p>
+                    </div>
+                    <div class="aos-card" data-aos="u3aos2">
+                        <img src="https://svkhhnulgictmdvqvwte.supabase.co/storage/v1/object/public/u3aos2icon/U3AOS2icon.png"
+                            class="aos-icon" alt="Pathways icon">
+                        <h3>Unit 3 AOS 2</h3>
+                        <p>Biochemical Pathways</p>
+                    </div>
+                    <div class="aos-card" data-aos="u4aos1">
+                        <img src="https://svkhhnulgictmdvqvwte.supabase.co/storage/v1/object/public/u4aos1icon/U4AOS1icon.png"
+                            class="aos-icon" alt="Immunity icon">
+                        <h3>Unit 4 AOS 1</h3>
+                        <p>Immunity & Disease</p>
+                    </div>
+                    <div class="aos-card" data-aos="u4aos2">
+                        <img src="https://svkhhnulgictmdvqvwte.supabase.co/storage/v1/object/public/u4aos2icon/U4AOS2icon.png"
+                            class="aos-icon" alt="Evolution icon">
+                        <h3>Unit 4 AOS 2</h3>
+                        <p>Evolution & Change</p>
+                    </div>
+                    <div class="aos-card" data-aos="u4aos3">
+                        <img src="https://svkhhnulgictmdvqvwte.supabase.co/storage/v1/object/public/u4aos3icon/U4AOS3icon.png"
+                            class="aos-icon" alt="Science icon">
+                        <h3>Unit 4 AOS 3</h3>
+                        <p>Scientific Inquiry</p>
+                    </div>
+                    <div class="aos-card select-all" id="selectAllCard">
+                        <i class="fas fa-layer-group"></i>
+                        <h3>Select All</h3>
+                        <p>All Areas of Study</p>
+                    </div>
                 </div>
-                <div class="aos-card" data-aos="u3aos2">
-                    <img src="https://svkhhnulgictmdvqvwte.supabase.co/storage/v1/object/public/u3aos2icon/U3AOS2icon.png"
-                        class="aos-icon" alt="Pathways icon">
-                    <h3>Unit 3 AOS 2</h3>
-                    <p>Biochemical Pathways</p>
+
+                <div class="controls">
+                    <div class="control-group">
+                        <label for="questionCount">Number of Questions</label>
+                        <select id="questionCount">
+                            <option value="5">5 Questions</option>
+                            <option value="10">10 Questions</option>
+                            <option value="15">15 Questions</option>
+                            <option value="20">20 Questions</option>
+                        </select>
+                    </div>
+
+                    <div class="control-group">
+                        <label>&nbsp;</label>
+                        <button id="startQuizBtn">
+                            <i class="fas fa-play"></i>
+                            Start Quiz
+                        </button>
+                    </div>
+
+                    <div class="control-group">
+                        <label>&nbsp;</label>
+                        <button id="reviewModeBtn" class="secondary">
+                            <i class="fas fa-sync-alt"></i>
+                            Review Mode
+                        </button>
+                    </div>
                 </div>
-                <div class="aos-card" data-aos="u4aos1">
-                    <img src="https://svkhhnulgictmdvqvwte.supabase.co/storage/v1/object/public/u4aos1icon/U4AOS1icon.png"
-                        class="aos-icon" alt="Immunity icon">
-                    <h3>Unit 4 AOS 1</h3>
-                    <p>Immunity & Disease</p>
+
+                <div class="section-title">
+                    <i class="fas fa-chart-line"></i>
+                    <h2>Progress Dashboard</h2>
                 </div>
-                <div class="aos-card" data-aos="u4aos2">
-                    <img src="https://svkhhnulgictmdvqvwte.supabase.co/storage/v1/object/public/u4aos2icon/U4AOS2icon.png"
-                        class="aos-icon" alt="Evolution icon">
-                    <h3>Unit 4 AOS 2</h3>
-                    <p>Evolution & Change</p>
+
+                <div class="progress-section" id="progressDashboard">
+                    <!-- Progress bars will be generated here -->
                 </div>
-                <div class="aos-card" data-aos="u4aos3">
-                    <img src="https://svkhhnulgictmdvqvwte.supabase.co/storage/v1/object/public/u4aos3icon/U4AOS3icon.png"
-                        class="aos-icon" alt="Science icon">
-                    <h3>Unit 4 AOS 3</h3>
-                    <p>Scientific Inquiry</p>
-                </div>
-                <div class="aos-card select-all" id="selectAllCard">
-                    <i class="fas fa-layer-group"></i>
-                    <h3>Select All</h3>
-                    <p>All Areas of Study</p>
+
+                <div class="status-cards">
+                    <div class="status-card">
+                        <h3 id="mastered-count">0</h3>
+                        <p>Mastered</p>
+                    </div>
+                    <div class="status-card on-track">
+                        <h3 id="on-track-count">0</h3>
+                        <p>On Track</p>
+                    </div>
+                    <div class="status-card needs-review">
+                        <h3 id="needs-review-count">0</h3>
+                        <p>Needs Review</p>
+                    </div>
                 </div>
             </div>
 
-            <div class="controls">
-                <div class="control-group">
-                    <label for="questionCount">Number of Questions</label>
-                    <select id="questionCount">
-                        <option value="5">5 Questions</option>
-                        <option value="10">10 Questions</option>
-                        <option value="15">15 Questions</option>
-                        <option value="20">20 Questions</option>
-                    </select>
+            <div class="quiz-container" id="quizScreen">
+                <div class="quiz-header">
+                    <div class="question-counter" id="questionCounter">Question 1 of 5</div>
+                    <div class="timer">Time: <span id="quizTimer">00:00</span></div>
                 </div>
 
-                <div class="control-group">
-                    <label>&nbsp;</label>
-                    <button id="startQuizBtn">
-                        <i class="fas fa-play"></i>
-                        Start Quiz
+                <div class="question">
+                    <p id="questionText">Loading question...</p>
+                </div>
+
+                <div class="options" id="optionsContainer">
+                    <!-- Options will be inserted here by JavaScript -->
+                </div>
+
+                <div class="controls" style="margin-top: 30px;">
+                    <button id="prevQuestionBtn" class="secondary" disabled>
+                        <i class="fas fa-arrow-left"></i>
+                        Previous
                     </button>
-                </div>
-
-                <div class="control-group">
-                    <label>&nbsp;</label>
-                    <button id="reviewModeBtn" class="secondary">
-                        <i class="fas fa-sync-alt"></i>
-                        Review Mode
+                    <button id="nextQuestionBtn">
+                        <i class="fas fa-arrow-right"></i>
+                        Next Question
                     </button>
                 </div>
             </div>
 
+            <div class="results-container" id="resultsScreen">
+                <div class="section-title">
+                    <i class="fas fa-clipboard-check"></i>
+                    <h2>Quiz Results</h2>
+                </div>
+
+                <div class="score-display">
+                    <h2>Your Score</h2>
+                    <div class="score-value" id="finalScore">0/5</div>
+                    <p id="scoreFeedback">Let's review your incorrect answers to improve!</p>
+                </div>
+
+                <div class="section-title" id="explanationTitle" style="display: none;">
+                    <i class="fas fa-lightbulb"></i>
+                    <h2>Review Incorrect Answers</h2>
+                </div>
+
+                <div class="explanation-section" id="explanationSection">
+                    <!-- Incorrect answers will be inserted here -->
+                </div>
+
+                <div class="controls" style="margin-top: 30px; justify-content: center;">
+                    <button id="tryAgainBtn" class="secondary">
+                        <i class="fas fa-redo"></i>
+                        Try Again
+                    </button>
+                    <button id="backToHomeBtn">
+                        <i class="fas fa-home"></i>
+                        Back to Home
+                    </button>
+                    <button id="reviewMissedBtn" style="display: none;">
+                        <i class="fas fa-book"></i>
+                        Review Missed Questions
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="sidebar">
             <div class="section-title">
-                <i class="fas fa-chart-line"></i>
-                <h2>Progress Dashboard</h2>
+                <i class="fas fa-history"></i>
+                <h2>Recent Activity</h2>
             </div>
 
-            <div class="progress-section" id="progressDashboard">
-                <!-- Progress bars will be generated here -->
-            </div>
-
-            <div class="status-cards">
-                <div class="status-card">
-                    <h3 id="mastered-count">0</h3>
-                    <p>Mastered</p>
-                </div>
-                <div class="status-card on-track">
-                    <h3 id="on-track-count">0</h3>
-                    <p>On Track</p>
-                </div>
-                <div class="status-card needs-review">
-                    <h3 id="needs-review-count">0</h3>
-                    <p>Needs Review</p>
+            <div class="activity-list" id="activityList">
+                <div class="activity-item" style="padding: 10px 0; text-align: center; color: var(--text-body);">
+                    <p>No recent activity yet</p>
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="quiz-container" id="quizScreen">
-        <div class="quiz-header">
-            <div class="question-counter" id="questionCounter">Question 1 of 5</div>
-            <div class="timer">Time: <span id="quizTimer">00:00</span></div>
-        </div>
-
-        <div class="question">
-            <p id="questionText">Loading question...</p>
-        </div>
-
-        <div class="options" id="optionsContainer">
-            <!-- Options will be inserted here by JavaScript -->
-        </div>
-
-        <div class="controls" style="margin-top: 30px;">
-            <button id="prevQuestionBtn" class="secondary" disabled>
-                <i class="fas fa-arrow-left"></i>
-                Previous
-            </button>
-            <button id="nextQuestionBtn">
-                <i class="fas fa-arrow-right"></i>
-                Next Question
+            <button id="resetProgressBtn" class="secondary"
+                style="background: var(--bg-main); width: 100%; margin-top: 15px;">
+                <i class="fas fa-trash-alt"></i>
+                Reset Progress
             </button>
         </div>
-    </div>
 
-    <div class="results-container" id="resultsScreen">
-        <div class="section-title">
-            <i class="fas fa-clipboard-check"></i>
-            <h2>Quiz Results</h2>
-        </div>
+        <footer>
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <a href="https://1strankbiology.com/" class="footer-home-link">
+                        <i class="fas fa-dna"></i>
+                        <span>1st Rank Biology</span>
+                    </a>
+                </div>
 
-        <div class="score-display">
-            <h2>Your Score</h2>
-            <div class="score-value" id="finalScore">0/5</div>
-            <p id="scoreFeedback">Let's review your incorrect answers to improve!</p>
-        </div>
-
-        <div class="section-title" id="explanationTitle" style="display: none;">
-            <i class="fas fa-lightbulb"></i>
-            <h2>Review Incorrect Answers</h2>
-        </div>
-
-        <div class="explanation-section" id="explanationSection">
-            <!-- Incorrect answers will be inserted here -->
-        </div>
-
-        <div class="controls" style="margin-top: 30px; justify-content: center;">
-            <button id="tryAgainBtn" class="secondary">
-                <i class="fas fa-redo"></i>
-                Try Again
-            </button>
-            <button id="backToHomeBtn">
-                <i class="fas fa-home"></i>
-                Back to Home
-            </button>
-            <button id="reviewMissedBtn" style="display: none;">
-                <i class="fas fa-book"></i>
-                Review Missed Questions
-            </button>
-        </div>
-    </div>
-    </div>
-
-    <div class="sidebar">
-        <div class="section-title">
-            <i class="fas fa-fire"></i>
-            <h2>Streak</h2>
-        </div>
-
-        <div class="streak-display">
-            <div class="streak-value">
-                <i class="fas fa-fire"></i>
-                <span id="streak-days">0</span>
+                <div class="footer-legal">
+                    <p>©2025  1st Rank Biology. All rights reserved.</p>
+                    <p>Created by Aaron Gillespie</p>
+                    <p class="footer-disclaimer">
+                        VCE is a registered trademark of the VCAA. This website is not endorsed by or affiliated with the
+                        VCAA.
+                    </p>
+                    <p class="footer-acknowledgment">
+                        I acknowledge the Traditional Owners of the land on which we live and work, and pay my respects to
+                        Elders past, present, and emerging.
+                    </p>
+                </div>
             </div>
-            <div class="streak-label">Current Streak</div>
-        </div>
-
-        <div class="last-practice">
-            <p>Last practiced: <span id="last-practice-date">Never</span></p>
-            <p id="streak-message">Start practicing to build your streak!</p>
-        </div>
-
-        <div class="section-title" style="margin-top: 30px;">
-            <i class="fas fa-history"></i>
-            <h2>Recent Activity</h2>
-        </div>
-
-        <div class="activity-list" id="activityList">
-            <div class="activity-item" style="padding: 10px 0; text-align: center; color: var(--text-body);">
-                <p>No recent activity yet</p>
-            </div>
-        </div>
-        <button id="resetProgressBtn" class="secondary"
-            style="background: var(--warning); width: 100%; margin-top: 15px;">
-            <i class="fas fa-trash-alt"></i>
-            Reset Progress
-        </button>
-    </div>
-    </div>
-    </div>
-
-    <footer>
-        <div class="footer-content">
-            <div class="footer-brand">
-                <a href="https://1strankbiology.com/" class="footer-home-link">
-                    <i class="fas fa-dna"></i>
-                    <span>1st Rank Biology</span>
-                </a>
-            </div>
-
-            <div class="footer-legal">
-                <p>©2025  1st Rank Biology. All rights reserved.</p>
-                <p>Created by Aaron Gillespie</p>
-                <p class="footer-disclaimer">
-                    VCE is a registered trademark of the VCAA. This website is not endorsed by or affiliated with the
-                    VCAA.
-                </p>
-                <p class="footer-acknowledgment">
-                    I acknowledge the Traditional Owners of the land on which we live and work, and pay my respects to
-                    Elders past, present, and emerging.
-                </p>
-            </div>
-        </div>
-    </footer>
+        </footer>
     </div>
 
     <!-- Review Modal -->
@@ -4498,7 +4520,6 @@
         const progressDashboard = document.getElementById('progressDashboard');
         const streakDays = document.getElementById('streak-days');
         const lastPracticeDate = document.getElementById('last-practice-date');
-        const streakMessage = document.getElementById('streak-message');
         const masteredCount = document.getElementById('mastered-count');
         const onTrackCount = document.getElementById('on-track-count');
         const needsReviewCount = document.getElementById('needs-review-count');
@@ -4605,7 +4626,6 @@
             // Reset streak display
             streakDays.textContent = '0';
             lastPracticeDate.textContent = 'Never';
-            streakMessage.textContent = 'Start practicing to build your streak!';
         }
 
         // Add activity to log and persist in localStorage
@@ -4855,14 +4875,23 @@
                 }
             });
 
-            nextQuestionBtn.addEventListener('click', () => {
-                if (currentQuestionIndex < currentQuestions.length - 1) {
-                    currentQuestionIndex++;
-                    loadQuestion();
-                } else {
-                    finishQuiz();
-                }
-            });
+            nextQuestionBtn.addEventListener('click', handleNextQuestion);
+
+// Add this function definition
+function handleNextQuestion() {
+    // First check if user has selected an answer for the current question
+    if (userAnswers[currentQuestionIndex] === undefined) {
+        alert('Please select an answer before continuing');
+        return;
+    }
+    
+    if (currentQuestionIndex < currentQuestions.length - 1) {
+        currentQuestionIndex++;
+        loadQuestion();
+    } else {
+        finishQuiz();
+    }
+}
 
             // Results screen buttons
             tryAgainBtn.addEventListener('click', () => {
@@ -5029,6 +5058,7 @@
         }
 
         function finishQuiz() {
+            console.log('finishQuiz function called'); 
             // Stop timer
             clearInterval(timerInterval);
 
@@ -5298,12 +5328,6 @@
             // Update UI
             streakDays.textContent = streakData.currentStreak;
             lastPracticeDate.textContent = lastPracticeDay ? lastPracticeDay.toLocaleDateString() : 'Never';
-
-            if (streakData.currentStreak > 0) {
-                streakMessage.textContent = `🔥 Keep going! You're on a ${streakData.currentStreak}-day streak!`;
-            } else {
-                streakMessage.textContent = "Start practicing to build your streak!";
-            }
         }
         // Add this to reset the daily practice flag at midnight
         function checkNewDay() {
