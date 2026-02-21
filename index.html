@@ -160,6 +160,24 @@
             color: var(--text-body);
         }
 
+        /* Mobile-only streak (shown under logo) */
+        .mobile-streak {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+            margin-top: 2px;
+            margin-bottom: 10px;
+        }
+
+        .mobile-streak .streak-display {
+            padding: 8px 12px;
+        }
+
+        .mobile-streak .last-practice {
+            font-size: 0.8rem;
+        }
+
         /* Main Content Styles */
         .main-content {
             background: var(--bg-main);
@@ -817,6 +835,14 @@
                 position: static;
                 transform: none;
             }
+
+            .mobile-streak {
+                display: flex;
+            }
+
+            .subtitle {
+                margin-bottom: 6px;
+            }
         }
 
         @media (max-width: 768px) {
@@ -859,6 +885,22 @@
                          alt="1st Rank Biology Logo" class="logo-img">
                 </a>
                 <p class="subtitle">Smart Quiz & Review</p>
+
+                <!-- Mobile streak (shown under logo) -->
+                <div class="mobile-streak" aria-label="Streak">
+                    <div class="streak-display">
+                        <div>
+                            <div class="streak-value">
+                                <i class="fas fa-fire"></i>
+                                <span data-streak-days>0</span>
+                            </div>
+                            <div class="streak-label">Current Streak</div>
+                        </div>
+                    </div>
+                    <div class="last-practice">
+                        <p>Last: <span data-last-practice-date>Never</span></p>
+                    </div>
+                </div>
             </div>
             
             <div class="header-right">
@@ -866,13 +908,13 @@
                     <div>
                         <div class="streak-value">
                             <i class="fas fa-fire"></i>
-                            <span id="streak-days">0</span>
+                            <span id="streak-days" data-streak-days>0</span>
                         </div>
                         <div class="streak-label">Current Streak</div>
                     </div>
                 </div>
                 <div class="last-practice">
-                    <p>Last: <span id="last-practice-date">Never</span></p>
+                    <p>Last: <span id="last-practice-date" data-last-practice-date>Never</span></p>
                 </div>
             </div>
         </header>
@@ -4723,11 +4765,17 @@
         const selectAllBtn = document.getElementById('selectAllBtn');
         const selectedCount = document.getElementById('selectedCount');
         const progressDashboard = document.getElementById('progressDashboard');
-        const streakDays = document.getElementById('streak-days');
-        const lastPracticeDate = document.getElementById('last-practice-date');
+        const streakDaysEls = document.querySelectorAll('[data-streak-days]');
+        const lastPracticeDateEls = document.querySelectorAll('[data-last-practice-date]');
         const masteredCount = document.getElementById('mastered-count');
         const onTrackCount = document.getElementById('on-track-count');
         const needsReviewCount = document.getElementById('needs-review-count');
+
+        function setText(els, value) {
+            els.forEach(el => {
+                if (el) el.textContent = value;
+            });
+        }
 
         const dailyCard = document.getElementById('dailyCard');
         const dailyStickerImg = document.getElementById('dailyStickerImg');
@@ -4798,9 +4846,9 @@
             }
             // Load and display the current streak
             const streakData = JSON.parse(localStorage.getItem('streakData'));
-            streakDays.textContent = streakData.currentStreak;
+            setText(streakDaysEls, streakData.currentStreak);
             if (streakData.lastPracticeDate) {
-                lastPracticeDate.textContent = new Date(streakData.lastPracticeDate).toLocaleDateString();
+                setText(lastPracticeDateEls, new Date(streakData.lastPracticeDate).toLocaleDateString());
             }
         }
         // -------- Daily Question (per-user, resets at local midnight) --------
@@ -5111,8 +5159,8 @@
             `;
 
             // Reset streak display
-            streakDays.textContent = '0';
-            lastPracticeDate.textContent = 'Never';
+            setText(streakDaysEls, '0');
+            setText(lastPracticeDateEls, 'Never');
         }
 
         // Add activity to log and persist in localStorage
@@ -5837,10 +5885,11 @@ function handleNextQuestion() {
 
             // Refresh UI from saved data (prevents stale display bugs)
             const fresh = JSON.parse(localStorage.getItem('streakData')) || streakData;
-            streakDays.textContent = fresh.currentStreak || 0;
-            lastPracticeDate.textContent = fresh.lastPracticeDate
-                ? new Date(fresh.lastPracticeDate).toLocaleDateString()
-                : 'Never';
+            setText(streakDaysEls, fresh.currentStreak || 0);
+            setText(
+                lastPracticeDateEls,
+                fresh.lastPracticeDate ? new Date(fresh.lastPracticeDate).toLocaleDateString() : 'Never'
+            );
         }
 
         // Add this to reset the daily practice flag at midnight
