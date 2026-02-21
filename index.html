@@ -3,23 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Open Graph -->
-    <meta property="og:title" content="1st Rank Biology - Smart Quiz & Review Tool" />
-    <meta property="og:description" content="A VCE Biology quiz tool designed to support memory retention. Practise active recall with interleaved questions, choose one or more AOS to target, and revisit mistakes in Review Mode. For best results, space out practice and combine with past exam-style questions." />
-    <meta property="og:url" content="https://smartrevise.1strankbiology.com/" />
-    <meta property="og:image" content="https://svkhhnulgictmdvqvwte.supabase.co/storage/v1/object/public/SmartQuizAd/SmartToolAd.png" />
-    <meta property="og:image:alt" content="1st Rank Biology Logo" />
-    <meta property="og:type" content="website" />
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="1st Rank Biology - Smart Quiz & Review Tool" />
-    <meta name="twitter:description" content="A VCE Biology quiz tool designed to support memory retention. Practise active recall with interleaved questions, choose one or more AOS to target, and revisit mistakes in Review Mode. For best results, space out practice and combine with past exam-style questions." />
-    <meta name="twitter:image" content="https://svkhhnulgictmdvqvwte.supabase.co/storage/v1/object/public/SmartQuizAd/SmartToolAd.png" />
-
     <title>1st Rank Biology - Smart Quiz & Review Tool</title>
-    <link rel="icon" href="https://svkhhnulgictmdvqvwte.supabase.co/storage/v1/object/public/favicon/favicon.png" type="image/png">
+    <link rel="icon" href="https://svkhhnulgictmdvqvwte.supabase.co/storage/v1/object/public/favicon//favicon.png" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Futura:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
@@ -670,6 +655,145 @@
             margin-right: 10px;
         }
 
+
+        /* Daily Question */
+        .daily-card {
+            background: var(--light-gray);
+            border: 1px solid var(--border-default);
+            border-radius: var(--border-radius);
+            padding: 18px;
+            margin-bottom: 18px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .daily-card-header {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+
+        .daily-card-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--secondary);
+        }
+
+        .daily-card-title h3 {
+            font-size: 1.25rem;
+            margin: 0;
+        }
+
+        .daily-subtitle {
+            font-size: 0.9rem;
+            color: var(--text-body);
+            margin-top: 2px;
+        }
+
+        .daily-actions {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        .daily-actions button {
+            padding: 10px 12px;
+            font-size: 0.95rem;
+            white-space: nowrap;
+        }
+
+        .daily-sticker {
+            height: 150px;
+            width: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 6px 12px rgba(0,0,0,0.12));
+        }
+
+        .daily-question {
+            background: var(--bg-main);
+            border: 1px solid var(--border-default);
+            border-radius: var(--border-radius);
+            padding: 16px;
+        }
+
+        .daily-question p {
+            font-size: 1.05rem;
+            margin-bottom: 12px;
+            color: var(--text-heading);
+        }
+
+        .daily-meta {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 10px;
+            color: var(--text-body);
+            font-size: 0.85rem;
+        }
+
+        .daily-meta strong { color: var(--text-heading); }
+
+        .daily-options {
+            display: grid;
+            gap: 10px;
+        }
+
+        .daily-options .option {
+            padding: 12px;
+        }
+
+        .daily-disabled {
+            opacity: 0.9;
+        }
+
+        .daily-status {
+            margin-top: 10px;
+            font-size: 0.95rem;
+        }
+
+        .daily-status.good { color: var(--primary); font-weight: 600; }
+        .daily-status.warn { color: var(--warning); font-weight: 600; }
+
+        /* Daily AOS modal list */
+        .daily-aos-grid {
+            display: grid;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .daily-aos-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px;
+            background: var(--light-gray);
+            border: 1px solid var(--border-default);
+            border-radius: var(--border-radius);
+        }
+
+        .daily-aos-item input { transform: scale(1.15); }
+
+        .daily-aos-item strong { color: var(--text-heading); }
+
+        @media (max-width: 768px) {
+            .daily-card-header {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .daily-actions {
+                justify-content: space-between;
+            }
+            .daily-sticker {
+                height: 105px;
+                align-self: flex-end;
+            }
+        }
+
         /* Responsive Styles */
         @media (max-width: 900px) {
             .container {
@@ -755,6 +879,38 @@
 
         <div class="main-content">
             <div id="homeScreen">
+                <!-- Daily Question -->
+                <div class="daily-card" id="dailyCard">
+                    <div class="daily-card-header">
+                        <div>
+                            <div class="daily-card-title">
+                                <i class="fas fa-calendar-day" style="color: var(--accent);"></i>
+                                <h3>Daily Question</h3>
+                            </div>
+                            <div class="daily-subtitle" id="dailySubtitle">Answer 1 question to keep your streak going.</div>
+                        </div>
+
+                        <div class="daily-actions">
+                            <button id="dailySettingsBtn" class="secondary" type="button" title="Choose what you've studied">
+                                <i class="fas fa-sliders-h"></i>
+                                Studied topics
+                            </button>
+                            <img id="dailyStickerImg" class="daily-sticker" alt="Daily status sticker" />
+                        </div>
+                    </div>
+
+                    <div class="daily-question" id="dailyQuestionBox">
+                        <div class="daily-meta">
+                            <div>From: <strong id="dailyAosLabel">—</strong></div>
+                            <div>Resets: <strong id="dailyResetLabel">Midnight</strong></div>
+                        </div>
+
+                        <p id="dailyQuestionText">Loading your daily question…</p>
+                        <div class="daily-options" id="dailyOptionsContainer"></div>
+                        <div class="daily-status" id="dailyStatusText" aria-live="polite"></div>
+                    </div>
+                </div>
+
                 <div class="aos-grid">
                     <div class="aos-card" data-aos="u3aos1">
                         <img src="https://svkhhnulgictmdvqvwte.supabase.co/storage/v1/object/public/u3aos1icon/U3AOS1icon.png"
@@ -979,6 +1135,35 @@
             </div>
         </div>
     </div>
+    <!-- Daily Question Settings Modal -->
+    <div class="modal" id="dailyAosModal">
+        <div class="modal-content">
+            <div class="modal-title">Daily Question: What have you studied?</div>
+            <p style="color: var(--text-body); margin-bottom: 10px;">
+                Your daily question will be picked randomly from the topics you tick here.
+            </p>
+
+            <div class="daily-aos-grid" id="dailyAosList">
+                <!-- Daily AOS checkboxes inserted here -->
+            </div>
+
+            <div class="review-controls" style="margin-top: 18px;">
+                <button id="dailySelectAllBtn" class="secondary" type="button">
+                    <i class="fas fa-check-square"></i>
+                    Select all
+                </button>
+                <button id="dailySaveBtn" type="button">
+                    <i class="fas fa-save"></i>
+                    Save
+                </button>
+                <button id="dailyCancelBtn" class="secondary" type="button">
+                    <i class="fas fa-times"></i>
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+
 
     <script>
         const questionData = {
@@ -2123,10 +2308,10 @@
                 },
                 {
                     "id": "u3aos2-q40",
-  "question": "In photosynthesis, the light-dependent reactions occur in which structure of the chloroplast?",
-  "options": ["Stroma", "Thylakoid membranes", "Outer membrane", "Matrix"],
-  "answer": 1,
-  "explanation": "The light-dependent stage occurs in the thylakoid membranes of the chloroplast, where chlorophyll absorbs light energy to drive photolysis of water, ATP production, and NADPH formation."
+                    "question": "Anaerobic bacteria in biogas generators break down biomass to produce mainly which fuel?",
+                    "options": ["Ethanol", "Methane", "Hydrogen", "Gasoline"],
+                    "answer": 1,
+                    "explanation": "Anaerobic decomposition of organic biomass by certain microbes (methanogenic bacteria/archaea) produces methane gas, which can be used as biogas fuel."
                 },
                 {
                     "id": "u3aos2-q41",
@@ -4544,6 +4729,21 @@
         const onTrackCount = document.getElementById('on-track-count');
         const needsReviewCount = document.getElementById('needs-review-count');
 
+        const dailyCard = document.getElementById('dailyCard');
+        const dailyStickerImg = document.getElementById('dailyStickerImg');
+        const dailyQuestionText = document.getElementById('dailyQuestionText');
+        const dailyOptionsContainer = document.getElementById('dailyOptionsContainer');
+        const dailyStatusText = document.getElementById('dailyStatusText');
+        const dailyAosLabel = document.getElementById('dailyAosLabel');
+        const dailyResetLabel = document.getElementById('dailyResetLabel');
+        const dailySettingsBtn = document.getElementById('dailySettingsBtn');
+        const dailyAosModal = document.getElementById('dailyAosModal');
+        const dailyAosList = document.getElementById('dailyAosList');
+        const dailySelectAllBtn = document.getElementById('dailySelectAllBtn');
+        const dailySaveBtn = document.getElementById('dailySaveBtn');
+        const dailyCancelBtn = document.getElementById('dailyCancelBtn');
+
+
         // State management
         let selectedAOS = [];
         let currentQuestions = [];
@@ -4579,6 +4779,9 @@
             updateProgressBars(); // Load saved progress
             // Initialize streak tracking
             initializeStreak();
+            // Daily question
+            renderDailyQuestion();
+            scheduleMidnightResets();
             // Load activity log from localStorage
             updateActivityList();
         });
@@ -4600,6 +4803,270 @@
                 lastPracticeDate.textContent = new Date(streakData.lastPracticeDate).toLocaleDateString();
             }
         }
+        // -------- Daily Question (per-user, resets at local midnight) --------
+        const DAILY_AVAILABLE_STICKER = "https://svkhhnulgictmdvqvwte.supabase.co/storage/v1/object/public/Smart%20Quiz/Daily_Question_Flame_Tadpole-removebg.png";
+        const DAILY_DONE_STICKER = "https://svkhhnulgictmdvqvwte.supabase.co/storage/v1/object/public/Smart%20Quiz/Next%20Daily%20Available%20at%20Midnight%20Bubbles.png";
+
+        const DAILY_AOS_KEY = "dailyAosSelection";
+        const DAILY_STATE_KEY = "dailyQuestionState";
+
+        function getLocalDateKey(d = new Date()) {
+            const y = d.getFullYear();
+            const m = String(d.getMonth() + 1).padStart(2, "0");
+            const day = String(d.getDate()).padStart(2, "0");
+            return `${y}-${m}-${day}`;
+        }
+
+        function msUntilNextLocalMidnight() {
+            const now = new Date();
+            const next = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1);
+            return Math.max(1000, next.getTime() - now.getTime());
+        }
+
+        function getAllAosIds() {
+            return ["u3aos1", "u3aos2", "u4aos1", "u4aos2", "u4aos3"];
+        }
+
+        function aosLabel(id) {
+            const map = {
+                u3aos1: "Unit 3 AOS 1",
+                u3aos2: "Unit 3 AOS 2",
+                u4aos1: "Unit 4 AOS 1",
+                u4aos2: "Unit 4 AOS 2",
+                u4aos3: "Unit 4 AOS 3"
+            };
+            return map[id] || id;
+        }
+
+        function loadDailyAosSelection() {
+            const raw = localStorage.getItem(DAILY_AOS_KEY);
+            if (!raw) {
+                const defaults = getAllAosIds();
+                localStorage.setItem(DAILY_AOS_KEY, JSON.stringify(defaults));
+                return defaults;
+            }
+            try {
+                const parsed = JSON.parse(raw);
+                if (Array.isArray(parsed) && parsed.length) return parsed;
+            } catch (e) { /* ignore */ }
+            const fallback = getAllAosIds();
+            localStorage.setItem(DAILY_AOS_KEY, JSON.stringify(fallback));
+            return fallback;
+        }
+
+        function saveDailyAosSelection(arr) {
+            const cleaned = Array.from(new Set((arr || []).filter(Boolean)));
+            localStorage.setItem(DAILY_AOS_KEY, JSON.stringify(cleaned));
+        }
+
+        function findQuestionById(qid) {
+            for (const aos of Object.keys(questionData)) {
+                const found = (questionData[aos] || []).find(q => q.id === qid);
+                if (found) return { aos, q: found };
+            }
+            return null;
+        }
+
+        function pickRandomQuestionFromAos(aosIds) {
+            const pools = (aosIds || []).filter(id => questionData[id] && questionData[id].length);
+            const usable = pools.length ? pools : getAllAosIds().filter(id => questionData[id] && questionData[id].length);
+
+            // Flatten into (aos, question) list
+            const flat = [];
+            usable.forEach(aos => {
+                (questionData[aos] || []).forEach(q => flat.push({ aos, q }));
+            });
+            if (!flat.length) return null;
+
+            const idx = Math.floor(Math.random() * flat.length);
+            return flat[idx];
+        }
+
+        function getDailyState() {
+            try {
+                return JSON.parse(localStorage.getItem(DAILY_STATE_KEY) || "null");
+            } catch (e) {
+                return null;
+            }
+        }
+
+        function setDailyState(state) {
+            localStorage.setItem(DAILY_STATE_KEY, JSON.stringify(state));
+        }
+
+        function ensureDailyQuestionForToday() {
+            const todayKey = getLocalDateKey();
+            const selection = loadDailyAosSelection();
+
+            let state = getDailyState();
+            if (!state || state.dateKey !== todayKey) {
+                const pick = pickRandomQuestionFromAos(selection);
+                if (!pick) {
+                    state = { dateKey: todayKey, answered: false, questionId: null, aos: null };
+                } else {
+                    state = {
+                        dateKey: todayKey,
+                        answered: false,
+                        questionId: pick.q.id,
+                        aos: pick.aos,
+                        userAnswer: null,
+                        correct: null
+                    };
+                }
+                setDailyState(state);
+            }
+
+            return state;
+        }
+
+        function renderDailyQuestion() {
+            const state = ensureDailyQuestionForToday();
+            const selection = loadDailyAosSelection();
+
+            // Sticker
+            dailyStickerImg.src = state.answered ? DAILY_DONE_STICKER : DAILY_AVAILABLE_STICKER;
+
+            // Label
+            dailyResetLabel.textContent = "Midnight";
+
+            if (!selection.length) {
+                dailyAosLabel.textContent = "Choose topics";
+                dailyQuestionText.textContent = "Select the topics you've studied to get a daily question.";
+                dailyOptionsContainer.innerHTML = "";
+                dailyStatusText.textContent = "";
+                dailyStatusText.className = "daily-status warn";
+                return;
+            }
+
+            if (!state.questionId) {
+                dailyAosLabel.textContent = "—";
+                dailyQuestionText.textContent = "No daily question available right now.";
+                dailyOptionsContainer.innerHTML = "";
+                dailyStatusText.textContent = "";
+                dailyStatusText.className = "daily-status";
+                return;
+            }
+
+            const found = findQuestionById(state.questionId);
+            if (!found) {
+                // If something changed, regenerate
+                localStorage.removeItem(DAILY_STATE_KEY);
+                return renderDailyQuestion();
+            }
+
+            dailyAosLabel.textContent = aosLabel(found.aos);
+            dailyQuestionText.textContent = found.q.question;
+
+            // Options
+            dailyOptionsContainer.innerHTML = "";
+            found.q.options.forEach((opt, i) => {
+                const div = document.createElement("div");
+                div.className = "option";
+                div.setAttribute("role", "button");
+                div.tabIndex = 0;
+                div.innerHTML = `<div class="option-label">${String.fromCharCode(65 + i)}</div><div>${opt}</div>`;
+
+                const select = () => {
+                    const current = getDailyState();
+                    if (!current || current.answered) return;
+
+                    current.answered = true;
+                    current.userAnswer = i;
+                    current.correct = (i === found.q.answer);
+                    setDailyState(current);
+
+                    // Mark practice for the day (keeps streak going even if this is all they do)
+                    updateStreakInfo();
+
+                    // Log in Recent Activity
+                    if (typeof addActivity === "function") {
+                        addActivity(`Daily Question answered: ${current.correct ? "Correct ✅" : "Incorrect ❌"}`);
+                    }
+
+                    // Visual feedback
+                    renderDailyQuestion();
+                };
+
+                div.addEventListener("click", select);
+                div.addEventListener("keydown", (e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                        e.preventDefault();
+                        select();
+                    }
+                });
+
+                // If answered, lock + colour
+                if (state.answered) {
+                    div.classList.add("daily-disabled");
+                    if (i === found.q.answer) div.classList.add("correct");
+                    if (state.userAnswer === i && i !== found.q.answer) div.classList.add("incorrect");
+                    div.style.pointerEvents = "none";
+                }
+
+                dailyOptionsContainer.appendChild(div);
+            });
+
+            if (state.answered) {
+                dailyStatusText.className = "daily-status good";
+                if (state.correct) {
+                    dailyStatusText.textContent = "✅ Nice! Daily complete — come back tomorrow.";
+                } else {
+                    dailyStatusText.className = "daily-status warn";
+                    dailyStatusText.textContent = `❌ Not quite. Correct answer: ${String.fromCharCode(65 + found.q.answer)}. Daily complete — come back tomorrow.`;
+                }
+            } else {
+                dailyStatusText.className = "daily-status";
+                dailyStatusText.textContent = "Answer this to save your streak today.";
+            }
+        }
+
+        function buildDailyAosModal() {
+            const selected = new Set(loadDailyAosSelection());
+            const items = [
+                { id: "u3aos1", title: "Unit 3 AOS 1", desc: "DNA, Proteins & Tech" },
+                { id: "u3aos2", title: "Unit 3 AOS 2", desc: "Biochemical Pathways" },
+                { id: "u4aos1", title: "Unit 4 AOS 1", desc: "Immunity & Disease" },
+                { id: "u4aos2", title: "Unit 4 AOS 2", desc: "Evolution & Change" },
+                { id: "u4aos3", title: "Unit 4 AOS 3", desc: "Scientific Inquiry" }
+            ];
+
+            dailyAosList.innerHTML = "";
+            items.forEach(item => {
+                const row = document.createElement("label");
+                row.className = "daily-aos-item";
+                row.innerHTML = `
+                    <input type="checkbox" data-aos="${item.id}" ${selected.has(item.id) ? "checked" : ""} />
+                    <div>
+                        <strong>${item.title}</strong>
+                        <div style="font-size:0.85rem; color: var(--text-body);">${item.desc}</div>
+                    </div>
+                `;
+                dailyAosList.appendChild(row);
+            });
+        }
+
+        function openDailyAosModal() {
+            buildDailyAosModal();
+            dailyAosModal.style.display = "flex";
+        }
+
+        function closeDailyAosModal() {
+            dailyAosModal.style.display = "none";
+        }
+
+        function scheduleMidnightResets() {
+            // Reset practiceCompletedToday + daily question at local midnight, even if the page stays open.
+            setTimeout(() => {
+                checkNewDay();
+                // Force a new daily question for the new day
+                localStorage.removeItem(DAILY_STATE_KEY);
+                renderDailyQuestion();
+                scheduleMidnightResets(); // reschedule
+            }, msUntilNextLocalMidnight());
+        }
+
+
+
 
         function createProgressBars() {
             const aosList = [
@@ -4962,6 +5429,30 @@ function handleNextQuestion() {
 
             // Reset Progress button
             document.getElementById('resetProgressBtn').addEventListener('click', resetProgress);
+            // Daily question settings
+            dailySettingsBtn.addEventListener('click', openDailyAosModal);
+            dailyCancelBtn.addEventListener('click', closeDailyAosModal);
+            dailyAosModal.addEventListener('click', (e) => {
+                if (e.target === dailyAosModal) closeDailyAosModal();
+            });
+
+            dailySelectAllBtn.addEventListener('click', () => {
+                const boxes = dailyAosList.querySelectorAll('input[type="checkbox"]');
+                boxes.forEach(b => b.checked = true);
+            });
+
+            dailySaveBtn.addEventListener('click', () => {
+                const boxes = Array.from(dailyAosList.querySelectorAll('input[type="checkbox"]'));
+                const selected = boxes.filter(b => b.checked).map(b => b.dataset.aos);
+                saveDailyAosSelection(selected);
+
+                // New selection -> regenerate today's daily question (user-specific)
+                localStorage.removeItem(DAILY_STATE_KEY);
+                renderDailyQuestion();
+
+                closeDailyAosModal();
+            });
+
         }
 
         function startQuiz() {
@@ -5301,54 +5792,57 @@ function handleNextQuestion() {
             needsReviewCount.textContent = totalNeedsReview;
         }
 
+        
         function updateStreakInfo() {
-            const now = new Date();
-            const today = new Date(now.getFullYear(), now.getMonth(), now.getDate()); // Normalize to midnight
+            // Always ensure the daily "completed" flag is correct for today before we evaluate streak changes
+            checkNewDay();
 
-            // Get or initialize streak data
+            const now = new Date();
+            const today = new Date(now.getFullYear(), now.getMonth(), now.getDate()); // local midnight
+
             let streakData = JSON.parse(localStorage.getItem('streakData')) || {
                 currentStreak: 0,
                 lastPracticeDate: null,
                 longestStreak: 0
             };
 
-            // Convert last practice date to Date object if it exists
             const lastDate = streakData.lastPracticeDate ? new Date(streakData.lastPracticeDate) : null;
-            const lastPracticeDay = lastDate ? new Date(lastDate.getFullYear(), lastDate.getMonth(), lastDate.getDate()) : null;
+            const lastPracticeDay = lastDate
+                ? new Date(lastDate.getFullYear(), lastDate.getMonth(), lastDate.getDate())
+                : null;
 
-            // Calculate day difference (in whole days)
-            const dayDiff = lastPracticeDay ? Math.floor((today - lastPracticeDay) / (1000 * 60 * 60 * 24)) : null;
+            const dayDiff = lastPracticeDay
+                ? Math.floor((today - lastPracticeDay) / (1000 * 60 * 60 * 24))
+                : null;
 
-            // Update streak only if we're practicing today for the first time
+            // Only count ONE "practice" per day (quiz completion OR daily question)
             if (!localStorage.getItem('practiceCompletedToday')) {
-                // Update streak
                 if (!lastPracticeDay) {
-                    // First time practicing
                     streakData.currentStreak = 1;
                 } else if (dayDiff === 1) {
-                    // Consecutive day
-                    streakData.currentStreak++;
+                    streakData.currentStreak += 1;
                 } else if (dayDiff > 1) {
-                    // Broken streak - reset to 1
                     streakData.currentStreak = 1;
                 }
-                // If same day (dayDiff === 0), don't change streak
+                // If dayDiff === 0, same day: don't change streak
 
-                // Update longest streak if needed
-                if (streakData.currentStreak > streakData.longestStreak) {
+                if (streakData.currentStreak > (streakData.longestStreak || 0)) {
                     streakData.longestStreak = streakData.currentStreak;
                 }
 
-                // Update last practice date
                 streakData.lastPracticeDate = today.toISOString();
                 localStorage.setItem('streakData', JSON.stringify(streakData));
                 localStorage.setItem('practiceCompletedToday', 'true');
             }
 
-            // Update UI
-            streakDays.textContent = streakData.currentStreak;
-            lastPracticeDate.textContent = lastPracticeDay ? lastPracticeDay.toLocaleDateString() : 'Never';
+            // Refresh UI from saved data (prevents stale display bugs)
+            const fresh = JSON.parse(localStorage.getItem('streakData')) || streakData;
+            streakDays.textContent = fresh.currentStreak || 0;
+            lastPracticeDate.textContent = fresh.lastPracticeDate
+                ? new Date(fresh.lastPracticeDate).toLocaleDateString()
+                : 'Never';
         }
+
         // Add this to reset the daily practice flag at midnight
         function checkNewDay() {
             const now = new Date();
@@ -5367,7 +5861,4 @@ function handleNextQuestion() {
         }
     </script>
 </body>
-
 </html>
-
-
